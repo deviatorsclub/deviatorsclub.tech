@@ -13,6 +13,7 @@ import Pooja from "@/assets/team/Pooja.webp";
 import Nishant from "@/assets/team/Nishant.webp";
 import Riya from "@/assets/team/Riya.webp";
 import Bhavya from "@/assets/team/Bhavya.webp";
+import Radhika from "@/assets/team/Radhika.webp";
 
 import { StaticImageData } from "next/image";
 
@@ -54,17 +55,39 @@ const team: {
     keywords: ["President"],
   },
   {
-    name: "Anup Pandey",
-    roles: ["Lead", "DSA"],
-    intro: "If it's unsolvable, it's mine.",
+    name: "Kunal Verma",
+    roles: ["Lead", "Web Dev"],
+    intro: "Either too crazy or too diabolic for you",
     urls: {
-      github: "https://github.com/Anup09Chahal",
-      linkedin: "https://www.linkedin.com/in/Anupchahal09/",
-      twitter: "https://x.com/Anupchahal09",
+      github: "https://www.github.com/kunalverma06",
+      linkedin: "https://www.linkedin.com/in/kunal-verma-528431291",
     },
-    image: Anup,
-    keywords: ["DSA", "lead"],
+    image: Kunal,
+    keywords: ["Web Development", "lead"],
   },
+  {
+    name: "Bhavya Kataria",
+    roles: ["Lead", "Social Media", "Designer"],
+    intro: "My spidey-sense has been tingling since birth",
+    urls: {
+      github: "https://www.github.com/damnbhavya",
+      linkedin: "https://www.linkedin.com/in/katariabhavya",
+    },
+    image: Bhavya,
+    keywords: ["Social Media"],
+  },
+  {
+    name: "Tanmay Verma",
+    roles: [" Lead", "Cyber Security "],
+    intro: "Guarding your data like it's my last Maggi packet",
+    urls: {
+      github: "https://github.com/Tanmay1906",
+      linkedin: "https://www.linkedin.com/in/tanmayverma190605",
+    },
+    image: Tanmay,
+    keywords: ["cyber security", "blockchain"],
+  },
+
   {
     name: "Shaarvy",
     roles: ["Lead", "Web 3 "],
@@ -80,6 +103,19 @@ const team: {
   },
 
   {
+    name: "Anup Pandey",
+    roles: ["Lead", "DSA"],
+    intro: "If it's unsolvable, it's mine.",
+    urls: {
+      github: "https://github.com/Anup09Chahal",
+      linkedin: "https://www.linkedin.com/in/Anupchahal09/",
+      twitter: "https://x.com/Anupchahal09",
+    },
+    image: Anup,
+    keywords: ["DSA", "lead"],
+  },
+
+  {
     name: "Arpita ",
     roles: ["Lead", "DSA"],
     intro: "Running on logic, debugging in peace.",
@@ -90,17 +126,7 @@ const team: {
     image: Arpita,
     keywords: ["women", "Co lead", "DSA"],
   },
-  {
-    name: "Tanmay Verma",
-    roles: [" Lead", "Cyber Security "],
-    intro: "Guarding your data like it's my last Maggi packet",
-    urls: {
-      github: "https://github.com/Tanmay1906",
-      linkedin: "https://www.linkedin.com/in/tanmayverma190605",
-    },
-    image: Tanmay,
-    keywords: ["cyber security", "blockchain"],
-  },
+
   {
     name: "Risha ",
     roles: ["Co Lead", "Cyber Security "],
@@ -115,7 +141,7 @@ const team: {
 
   {
     name: "Isha Nayal",
-    roles: [" AI/ML", "Co Lead"],
+    roles: ["Co Lead", " AI/ML"],
     intro: "Training models and my patience.",
     urls: {
       github: "https://github.com/Isha-thakur",
@@ -125,15 +151,16 @@ const team: {
     image: Isha,
     keywords: ["AI/ML "],
   },
+
   {
-    name: "Kunal Verma",
-    roles: ["Web Dev", "Lead"],
-    intro: "A unique fusion of dancer and coder.",
+    name: "Radhika Khatter",
+    roles: ["Co Lead", "Web Dev"],
+    intro: "If sleep were an Olympic sport, I’d win — even on a park bench.",
     urls: {
       github: "https://www.github.com/kunalverma06",
       linkedin: "https://www.linkedin.com/in/kunal-verma-528431291",
     },
-    image: Kunal,
+    image: Radhika,
     keywords: ["Web Development", "lead"],
   },
   {
@@ -184,19 +211,8 @@ const team: {
   },
 
   {
-    name: "Bhavya Kataria",
-    roles: ["Social Media", "Designer"],
-    intro: "My spidey-sense has been tingling since birth",
-    urls: {
-      github: "https://www.github.com/damnbhavya",
-      linkedin: "https://www.linkedin.com/in/katariabhavya",
-    },
-    image: Bhavya,
-    keywords: ["Social Media"],
-  },
-  {
     name: "Riya Sangwan",
-    roles: ["Social Media"],
+    roles: ["Co Lead", "Social Media"],
     image: Riya,
     intro: "Low drama, high vibes - running on chai and quiet ambitious.",
     urls: {

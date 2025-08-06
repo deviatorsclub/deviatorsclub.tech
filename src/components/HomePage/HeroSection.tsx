@@ -63,10 +63,14 @@ export default function HeroSection() {
                   build and push the boundaries of what&apos;s possible
                   together!
                 </p>
-                <Link href="https://linktree.deviatorsclub.tech/">
-                  <div className="group relative mt-6 min-w-[200px] overflow-hidden rounded-lg bg-Blue px-6 py-3 sm:w-[200px] sm:px-8 sm:py-4">
+                <Link
+                  href="https://linktree.deviatorsclub.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="group relative mt-6 min-w-[200px] overflow-hidden rounded-xl bg-Blue px-6 py-3 sm:w-[200px] sm:px-8 sm:py-4">
                     <span className="relative z-10 flex items-center justify-center gap-2 text-base font-medium sm:text-lg">
-                      Linktree
+                      Connect with us
                     </span>
                   </div>
                 </Link>

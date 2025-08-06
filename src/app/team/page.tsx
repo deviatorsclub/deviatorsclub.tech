@@ -4,8 +4,8 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import team from "@/data/team";
-import { GlobeAltIcon } from "@heroicons/react/24/outline";
-import { Twitter } from "lucide-react";
+// import { GlobeAltIcon } from "@heroicons/react/24/outline";
+// import { Twitter, Linkedin } from "lucide-react";
 // import ClientBackground3D from "@/components/3D/ClientBackground3D";
 
 const categories = [
@@ -80,14 +80,14 @@ export default function TeamSection() {
             className={`${
               selectedCategory === "All" ||
               selectedCategory === "Event Management"
-                ? "grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4"
+                ? "grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3"
                 : "flex flex-wrap justify-center gap-6"
             }`}
           >
             {filteredTeam.map((member, index) => (
               <div
                 key={index}
-                className={`rounded-xl bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:transform hover:shadow-xl hover:shadow-Blue/20 ${selectedCategory !== "All" && selectedCategory !== "Event Management" ? "h-[22rem] w-[20rem]" : ""} `}
+                className={`rounded-xl bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:transform hover:shadow-xl hover:shadow-Blue/20 ${selectedCategory !== "All" && selectedCategory !== "Event Management" ? "h-[26rem] w-[24rem]" : ""} `}
               >
                 <div className="flex flex-col items-center">
                   <div className="relative mb-4 h-32 w-32">
@@ -120,7 +120,7 @@ export default function TeamSection() {
                   <p className="mb-4 pb-2 pt-2 text-center text-sm text-gray-400 sm:text-base">
                     {member.intro}
                   </p>
-                  <div className="flex space-x-4">
+                  <div className="absolute bottom-4 flex justify-center gap-3 space-x-4">
                     {Object.entries(member.urls).map(([key, url]) => (
                       <Link
                         key={key}
@@ -138,19 +138,13 @@ export default function TeamSection() {
                             <path d="M12 0C5.37 0 0 5.37...Z" />
                           </svg>
                         )}
-                        {key === "linkedin" && (
-                          <svg
-                            className="h-5 w-5"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path d="M20.447 20.452h-3.554...Z" />
-                          </svg>
-                        )}
-                        {key === "twitter" && <Twitter className="h-5 w-5" />}
+                        {/* {key === "linkedin" && (
+                          <Linkedin className="h-5 w-5" />
+                        )} */}
+                        {/* {key === "twitter" && <Twitter className="h-5 w-5" />}
                         {key === "portfolio" && (
                           <GlobeAltIcon className="h-5 w-5" />
-                        )}
+                        )} */}
                       </Link>
                     ))}
                   </div>
