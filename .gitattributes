@@ -15,6 +15,10 @@
 *.xml text eol=lf
 # Binary files
 *.png filter=lfs diff=lfs merge=lfs -text
+# Specific files excluded from LFS due to Vercel build issues
+src/assets/events/cyberSec/1.png -filter -diff -merge text
+src/assets/events/cyberSec/5.png -filter -diff -merge text  
+src/assets/events/debugDecrypt/8.png -filter -diff -merge text
 *.jpg binary
 *.jpeg binary
 *.gif binary
