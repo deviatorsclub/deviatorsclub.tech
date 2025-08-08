@@ -13,6 +13,7 @@ interface PageParams {
 interface PageProps {
   params: Promise<PageParams>;
 }
+
 export default async function Page({ params }: PageProps) {
   const { eventSlug } = await params;
   const event = events.find((e) => e.slug == decodeURIComponent(eventSlug));
