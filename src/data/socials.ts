@@ -6,22 +6,12 @@ import {
   FaDiscord,
   FaLink,
 } from "react-icons/fa";
-
+import { FaXTwitter } from "react-icons/fa6";
 const socials = [
   {
-    name: "Github",
-    url: "https://github.com/deviatorsclub",
-    icon: FaGithub,
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/deviatorsclub",
-    icon: FaInstagram,
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/company/deviators-club",
-    icon: FaLinkedin,
+    name: "Linktree",
+    url: "https://linktree.deviatorsclub.tech",
+    icon: FaLink,
   },
   {
     name: "Whatsapp",
@@ -29,14 +19,29 @@ const socials = [
     icon: FaWhatsapp,
   },
   {
+    name: "Instagram",
+    url: "https://www.instagram.com/deviatorsclub",
+    icon: FaInstagram,
+  },
+  {
     name: "Discord",
-    url: "https://discord.gg/n9aDPwRK6N",
+    url: "https://discord.gg/bJ8U5FTb29",
     icon: FaDiscord,
   },
   {
-    name: "Linktree",
-    url: "https://linktree.deviatorsdce.tech",
-    icon: FaLink,
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/deviators-club",
+    icon: FaLinkedin,
+  },
+  {
+    name: "Github",
+    url: "https://github.com/deviatorsclub",
+    icon: FaGithub,
+  },
+  {
+    name: "X",
+    url: "https://x.com/deviatorsclub",
+    icon: FaXTwitter,
   },
 ];
 

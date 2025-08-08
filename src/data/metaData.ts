@@ -1,30 +1,30 @@
 import { Metadata } from "next";
 
 export const metaDataBase: Metadata = {
-  title: "Deviators Club | Explore Innovative Ideas and Collaborate",
+  title: "Deviators Club",
   description:
     "Join Deviators Club to explore groundbreaking ideas, collaborate with innovative minds, and transform concepts into reality. Connect with fellow creators and entrepreneurs.",
   keywords:
     "innovation, collaboration, creative ideas, entrepreneurship, startup community, idea exploration, DCE tech community",
-  authors: [{ name: "Deviators Club DCE" }],
-  creator: "Deviators Club DCE",
-  publisher: "Deviators Club DCE",
-  metadataBase: new URL("https://deviatorsdce.tech"),
+  authors: [{ name: "Deviators Club" }],
+  creator: "Deviators Club",
+  publisher: "Deviators Club",
+  metadataBase: new URL("https://deviatorsclub.tech"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Deviators Club | Explore Innovative Ideas and Collaborate",
+    title: "Deviators Club",
     description:
       "Join Deviators Club to explore groundbreaking ideas, collaborate with innovative minds, and transform concepts into reality.",
-    url: "https://deviatorsdce.tech",
-    siteName: "Deviators Club DCE",
+    url: "https://deviatorsclub.tech",
+    siteName: "Deviators Club",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Deviators Club DCE - Where Innovation Meets Collaboration",
+        alt: "Deviators Club",
       },
     ],
     locale: "en_US",
@@ -32,12 +32,12 @@ export const metaDataBase: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deviators Club | Explore Innovative Ideas and Collaborate",
+    title: "Deviators Club",
     description:
       "Join Deviators Club to explore groundbreaking ideas, collaborate with innovative minds, and transform concepts into reality.",
     images: ["/og-image.jpg"],
-    creator: "@deviatorsdce",
-    site: "@deviatorsdce",
+    creator: "@deviatorsclub",
+    site: "@deviatorsclub",
   },
   robots: {
     index: true,

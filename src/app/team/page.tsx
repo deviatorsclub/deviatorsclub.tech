@@ -4,8 +4,9 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import team from "@/data/team";
-// import { GlobeAltIcon } from "@heroicons/react/24/outline";
-// import { Twitter, Linkedin } from "lucide-react";
+import { FaGithub, FaLinkedin, FaLink } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 // import ClientBackground3D from "@/components/3D/ClientBackground3D";
 
 const categories = [
@@ -90,17 +91,18 @@ export default function TeamSection() {
                 className={`rounded-xl bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:transform hover:shadow-xl hover:shadow-Blue/20 ${selectedCategory !== "All" && selectedCategory !== "Event Management" ? "h-[26rem] w-[24rem]" : ""} `}
               >
                 <div className="flex flex-col items-center">
-                  <div className="relative mb-4 h-32 w-32">
+                  <div className="relative mb-4 h-40 w-40">
                     <Image
                       src={member.image.src}
                       alt={member.name}
-                      width={128}
-                      height={128}
+                      width={160}
+                      height={160}
                       className="sm:border-3 size-full rounded-full border-2 border-black object-cover shadow-lg ring-2 ring-white sm:ring-2"
+                      priority={index < 6}
                     />
                   </div>
                   <h3
-                    className="mb-2 pb-2 font-pixelify text-xl font-semibold text-white sm:text-2xl"
+                    className="mb-2 pb-2 text-xl text-white sm:text-2xl"
                     style={{
                       textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
                     }}
@@ -117,7 +119,7 @@ export default function TeamSection() {
                       </span>
                     ))}
                   </div>
-                  <p className="mb-4 pb-2 pt-2 text-center text-sm text-gray-400 sm:text-base">
+                  <p className="mb-6 pb-2 pt-2 text-center text-sm text-gray-400 sm:text-base">
                     {member.intro}
                   </p>
                   <div className="absolute bottom-4 flex justify-center gap-3 space-x-4">
@@ -129,22 +131,11 @@ export default function TeamSection() {
                         rel="noopener noreferrer"
                         className="text-gray-400 transition-colors hover:text-Blue"
                       >
-                        {key === "github" && (
-                          <svg
-                            className="h-5 w-5"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path d="M12 0C5.37 0 0 5.37...Z" />
-                          </svg>
-                        )}
-                        {/* {key === "linkedin" && (
-                          <Linkedin className="h-5 w-5" />
-                        )} */}
-                        {/* {key === "twitter" && <Twitter className="h-5 w-5" />}
-                        {key === "portfolio" && (
-                          <GlobeAltIcon className="h-5 w-5" />
-                        )} */}
+                        {key === "github" && <FaGithub className="h-5 w-5" />}
+                        {key === "linkedin" && <FaLinkedin className="h-5 w-5" />}
+                        {key === "twitter" && <FaXTwitter className="h-5 w-5" />}
+                        {key === "portfolio" && <FaLink className="h-5 w-5" />}
+                        {key === "leetcode" && <SiLeetcode className="h-5 w-5" />}
                       </Link>
                     ))}
                   </div>

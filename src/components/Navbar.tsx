@@ -44,10 +44,10 @@ export default function Navigation() {
               <Image
                 src={deviatorsLogoMin.src}
                 alt="Deviators Logo"
-                width={0}
-                height={0}
+                width={40}
+                height={40}
                 className="h-6 w-auto md:h-7"
-                style={{ width: "auto" }}
+                priority
               />
             </Link>
           </div>

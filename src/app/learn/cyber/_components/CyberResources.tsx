@@ -21,7 +21,7 @@ export default function CyberResources() {
               <h3 className="text-xl font-semibold text-white">
                 {resource.title}
               </h3>
-              <p className="text-grey-400">{resource.type}</p>
+              <p className="text-white/80">{resource.type}</p>
             </div>
             <Link
               href={resource.url}

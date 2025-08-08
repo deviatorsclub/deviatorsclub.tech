@@ -2,27 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom utility for neon text shadow */
 @layer utilities {
   .text-shadow-neon {
     text-shadow: 0 0 10px rgba(0, 255, 245, 0.7);
   }
 }
 
-/* Keyframes for AnimatedBackground */
+/* Animation keyframes for floating, spinning, and pulsing effects */
 @keyframes float-slow {
   0%,
   100% {
     transform: translateY(0px) translateX(0px);
     opacity: 0.6;
   }
+
   25% {
     transform: translateY(-10px) translateX(5px);
     opacity: 0.8;
   }
+
   50% {
     transform: translateY(-5px) translateX(-5px);
     opacity: 0.4;
   }
+
   75% {
     transform: translateY(-15px) translateX(10px);
     opacity: 0.7;
@@ -35,10 +39,12 @@
     transform: translateY(0px) translateX(0px);
     opacity: 0.4;
   }
+
   33% {
     transform: translateY(-8px) translateX(8px);
     opacity: 0.6;
   }
+
   66% {
     transform: translateY(-3px) translateX(-3px);
     opacity: 0.2;
@@ -49,6 +55,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -60,6 +67,7 @@
     opacity: 0.02;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.05;
     transform: scale(1.1);
@@ -71,6 +79,7 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Light and dark theme CSS variables */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -99,6 +108,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -128,9 +138,11 @@ body {
 }
 
 @layer base {
+  /* Global border and background/text color application */
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

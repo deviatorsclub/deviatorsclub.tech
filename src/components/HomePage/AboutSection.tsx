@@ -3,15 +3,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import aboutItems, { aboutClub } from "@/data/about";
 
+// About section with animated carousel
 export default function AboutSection() {
+  // Carousel state
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [mounted, setMounted] = useState(false);
 
+  // Mark component as mounted (for animation)
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Auto-advance carousel unless hovering
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering) {
@@ -34,6 +38,7 @@ export default function AboutSection() {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
+        {/* Section heading */}
         <motion.h2
           initial={mounted ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +47,7 @@ export default function AboutSection() {
         >
           About Deviators
         </motion.h2>
-        {/* Welcome Message */}
+        {/* Welcome message */}
         <motion.div
           initial={mounted ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +58,8 @@ export default function AboutSection() {
             {aboutClub}
           </p>
         </motion.div>
-        <div className="relative h-[250px] w-full max-w-3xl px-4 sm:h-[300px]">
+        {/* Animated carousel for about items */}
+        <div className="relative h-[275px] w-full max-w-3xl px-4 sm:h-[300px]">
           {mounted ? (
             <AnimatePresence mode="wait">
               <motion.div
@@ -98,7 +104,7 @@ export default function AboutSection() {
             </div>
           )}
         </div>
-        {/* Navigation dots */}
+        {/* Navigation dots for carousel */}
         <div className="mt-6 flex space-x-2 px-4 sm:mt-8">
           {aboutItems.map((_, index) => (
             <button

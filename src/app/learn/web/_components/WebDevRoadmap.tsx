@@ -12,7 +12,7 @@ import { ChevronRight } from "lucide-react";
 import { Gallery } from "react-photoswipe-gallery";
 import ImageZoom from "@/components/ImageZoom";
 
-import Syllabus0to100 from "@/assets/resources/web/0-1 syllabus.png";
+import Syllabus0to100 from "@/assets/resources/web/syllabus.svg";
 import { webDevRoadmapData } from "@/data/resources/web";
 
 export default function WebDevRoadmap() {
@@ -36,9 +36,9 @@ export default function WebDevRoadmap() {
                     transition={{ delay: itemIdx * 0.1 }}
                     className="flex items-start space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
                   >
-                    <ChevronRight className="text-white-400 mt-1 h-5 w-5 flex-shrink-0" />
+                    <ChevronRight className="text-white mt-1 h-5 w-5 flex-shrink-0" />
                     <div>
-                      <h3 className="text-white-200 font-semibold">
+                      <h3 className="text-white/80 font-semibold">
                         {item.title}
                       </h3>
                       <p className="text-sm text-gray-400">
@@ -55,7 +55,7 @@ export default function WebDevRoadmap() {
 
       <Card className="bg-black/5">
         <CardContent className="p-4">
-          <p className="text-white-200 w-full text-center font-mono text-sm">
+          <p className="text-gray-200 w-full text-center font-mono text-sm">
             Note: Check out Harkirat Singh&apos;s courses for a comprehensive
             learning experience from beginner to advanced topics.
           </p>
