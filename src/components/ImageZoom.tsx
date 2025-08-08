@@ -22,6 +22,7 @@ export default function ImageZoom({
       height={src.height}
     >
       {({ ref, open }) => (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           ref={ref}
           onClick={open}

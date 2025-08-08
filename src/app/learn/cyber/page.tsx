@@ -131,7 +131,7 @@ export default function CyberResources() {
             <p className="mb-4 text-lg text-gray-300">
               For further assistance, contact the Deviators web dev team:
             </p>
-            <DisplayTeam keyword="cyber" />
+            <DisplayTeam keyword="Cyber Security"/>
           </motion.div>
         </div>
       </div>

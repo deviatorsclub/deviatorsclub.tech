@@ -13,7 +13,7 @@ export default function Footer() {
             >
               Deviators Club
             </Link>
-            <p className="opacity-80">estd: 2024</p>
+            <p className="text-white opacity-80">estd: 2024</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 sm:gap-5">

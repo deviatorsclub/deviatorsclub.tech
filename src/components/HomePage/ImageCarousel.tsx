@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 "use client";
-
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
@@ -8,10 +6,12 @@ import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
+// Props for the carousel
 interface CarouselProps {
   images: StaticImageData[];
 }
 
+// Animation variants for slide transitions
 const variants = {
   enter: (direction: number) => ({
     x: direction > 0 ? 1000 : -1000,
@@ -32,17 +32,17 @@ const variants = {
   }),
 };
 
+// Swipe logic for drag navigation
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
+// Custom mouse cursor for desktop carousel
 function CustomCursor({ isLeft }: { isLeft: boolean }) {
   return (
     <div
-      className={`pointer-events-none flex h-16 w-16 items-center justify-center rounded-full ${
-        isLeft ? "bg-Blue" : "bg-Blue"
-      } opacity-60 shadow-lg`}
+      className={`pointer-events-none flex h-16 w-16 items-center justify-center rounded-full bg-Blue opacity-60 shadow-lg`}
     >
       {isLeft ? (
         <ArrowLeft className="h-8 w-8 text-white" />
@@ -53,6 +53,7 @@ function CustomCursor({ isLeft }: { isLeft: boolean }) {
   );
 }
 
+// Carousel controls for touch devices
 function TouchableControls({
   paginate,
   images,
@@ -60,6 +61,7 @@ function TouchableControls({
   slideIndex,
   resetTimeout,
 }: {
+  // eslint-disable-next-line no-unused-vars
   paginate: (newDirection: number) => void;
   images: StaticImageData[];
   setPage: React.Dispatch<React.SetStateAction<[number, number]>>;
@@ -113,6 +115,7 @@ function TouchableControls({
   );
 }
 
+// Carousel for non-touch devices with custom mouse and drag
 function NonTouchableCarousel({
   images,
   page,
@@ -125,6 +128,7 @@ function NonTouchableCarousel({
   images: StaticImageData[];
   page: number;
   direction: number;
+  // eslint-disable-next-line no-unused-vars
   paginate: (newDirection: number) => void;
   slideIndex: number;
   resetTimeout: () => void;
@@ -135,6 +139,7 @@ function NonTouchableCarousel({
   const containerRef = useRef<HTMLDivElement>(null);
   const [showCustomMouse, setShowCustomMouse] = useState(false);
 
+  // Track mouse position and which side is hovered
   const handleMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
       if (!containerRef.current) return;
@@ -149,6 +154,7 @@ function NonTouchableCarousel({
     [],
   );
 
+  // Handle drag end for swipe navigation
   const handleDragEnd = (
     _: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo,
@@ -217,6 +223,7 @@ function NonTouchableCarousel({
   );
 }
 
+// Main image carousel component
 export default function ImageCarousel({ images }: CarouselProps) {
   const [isTouchableDevice, setIsTouchableDevice] = useState(false);
   const [[page, direction], setPage] = useState([0, 0]);
@@ -225,6 +232,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
 
   const slideIndex = Math.abs(page % images.length);
 
+  // Change slide by direction
   const paginate = useCallback(
     (newDirection: number) => {
       setPage([page + newDirection, newDirection]);
@@ -232,6 +240,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
     [page],
   );
 
+  // Detect touch device for controls
   const checkIsTouchableDevice = useCallback(() => {
     if (typeof window !== "undefined") {
       setIsTouchableDevice(window.matchMedia("(pointer: coarse)").matches);
@@ -248,6 +257,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
     return () => window.removeEventListener("resize", checkIsTouchableDevice);
   }, [checkIsTouchableDevice]);
 
+  // Auto-advance slides
   useEffect(() => {
     if (!mounted) return;
 
@@ -262,6 +272,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
     };
   }, [paginate, mounted]);
 
+  // Reset auto-advance timer
   const resetTimeout = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -271,6 +282,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
     }, 3000);
   }, [paginate]);
 
+  // Stop auto-advance timer
   const stopInterval = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -280,8 +292,9 @@ export default function ImageCarousel({ images }: CarouselProps) {
   return (
     <div className="w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <div className="mx-auto mb-4 max-w-4xl text-center sm:mb-6">
+        {/* Gallery heading and link */}
         <h2
-          className="mb-1 font-pixelify text-2xl font-bold text-white sm:mb-2 sm:text-3xl md:text-4xl"
+          className="mb-1 font-pixelify text-3xl font-bold text-white sm:mb-2 sm:text-4xl md:text-5xl"
           style={{
             textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
           }}
@@ -293,7 +306,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
         </p>
         <Link
           href="/gallery"
-          className="group inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white transition-all duration-300 hover:gap-3 hover:bg-Blue sm:text-base"
+          className="group inline-flex items-center gap-2 rounded-full border border-Blue bg-white/0 px-4 py-2 text-sm text-white transition-all duration-300 hover:gap-3 hover:bg-Blue sm:text-base"
         >
           View Full Gallery
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -307,10 +320,12 @@ export default function ImageCarousel({ images }: CarouselProps) {
             src={images[0].src}
             alt="Gallery preview"
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1024px"
             className="absolute h-full w-full object-cover"
           />
         ) : isTouchableDevice ? (
           <>
+            {/* Touch device carousel */}
             <AnimatePresence initial={false} custom={direction}>
               <motion.img
                 key={page}
@@ -349,6 +364,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
             />
           </>
         ) : (
+          // Desktop carousel with custom mouse
           <NonTouchableCarousel
             images={images}
             page={page}
