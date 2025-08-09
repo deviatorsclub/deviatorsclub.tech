@@ -10,14 +10,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         pixelify: ["var(--font-pixelify)"],
       },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        Blue:"#0047AB",
-        Bgblack:"#090909",
+        Blue: "#0047AB",
+        Bgblack: "#090909",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

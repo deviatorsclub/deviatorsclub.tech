@@ -52,7 +52,6 @@ export default function TeamPreview() {
             {shuffledMembers.map((member, index) => {
               let tilt = 0;
               let zIndex = 1;
-              let overlap = windowWidth < 640 ? 20 : 40;
               let cardWidth = windowWidth < 640 ? 110 : 200;
               // Desktop properties
               if (windowWidth >= 640) {
@@ -73,8 +72,6 @@ export default function TeamPreview() {
                 // z-index order: card 2 > card 1,3
                 if (index === 1) zIndex = 40;
                 else zIndex = 39;
-                // overlap
-                overlap = 30;
                 cardWidth = 110;
               }
               const cardHeight = windowWidth < 640 ? 160 : 300;
@@ -82,7 +79,6 @@ export default function TeamPreview() {
 
               // Calculate arch positioning
               const distanceFromCenter = Math.abs(index - middle);
-              const archRadius = windowWidth < 640 ? 100 : 180;
               const archHeight = windowWidth < 640 ? 30 : 60;
 
               // Calculate horizontal position (spread cards along the arch)
@@ -98,7 +94,6 @@ export default function TeamPreview() {
               const left = `calc(50% + ${horizontalOffset}px - ${cardWidth / 2}px)`;
               const top = `calc(50% + ${verticalOffset}px - ${cardHeight / 2}px)`;
 
-              const isMiddleCard = index === middle;
               const isHovered = hoveredIndex === index;
 
               // Increase z-index for hovered card

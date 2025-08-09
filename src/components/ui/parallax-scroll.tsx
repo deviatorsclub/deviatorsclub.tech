@@ -3,7 +3,7 @@
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ALLIMAGESDATA } from "@/types/event";
 
@@ -59,13 +59,12 @@ function RenderImage({
         style={{ y: translateY }}
         className="group relative overflow-hidden rounded-lg"
       >
-        <img
+        <Image
           src={el.src}
           className="transition-scale h-80 w-full object-cover duration-300 group-hover:scale-110"
           height={400}
           width={400}
           alt={title}
-          loading="lazy"
         />
         <div className="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <h3 className="text-lg font-semibold text-white">{title}</h3>
