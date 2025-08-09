@@ -6,7 +6,7 @@ interface AnimatedBackgroundProps {
   className?: string;
 }
 
-// Pre-generate particle positions to avoid hydration issues and improve performance
+// Pre-generate particle positions
 const LARGE_PARTICLES = Array.from({ length: 20 }, (_, i) => ({
   id: i,
   left: Math.floor(Math.random() * 100),
@@ -34,26 +34,40 @@ const SHAPES = Array.from({ length: 3 }, (_, i) => ({
   rotation: Math.floor(Math.random() * 360),
 }));
 
-/**
- * Optimized CSS animated background with professional tech aesthetic
- * Uses pre-generated particle positions for consistent performance
- */
 export default function AnimatedBackground({
-  className = "fixed inset-0 -z-10",
+  className = "fixed left-0 top-0 w-full -z-10",
 }: AnimatedBackgroundProps) {
   const [mounted, setMounted] = useState(false);
+  const [vh, setVh] = useState("100vh");
 
   useEffect(() => {
+    function setFullHeight() {
+      const height = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${height}px`);
+      setVh(`calc(var(--vh) * 100)`);
+    }
+    setFullHeight();
+    window.addEventListener("resize", setFullHeight);
     const timer = setTimeout(() => setMounted(true), 100);
-    return () => clearTimeout(timer);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", setFullHeight);
+    };
   }, []);
 
   return (
-    <div className={className}>
-      {/* Base gradient background - always visible */}
+    <div
+      className={className}
+      style={{
+        height: vh,
+        position: "fixed",
+      }}
+    >
+      {/* Base gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
 
-      {/* Static grid overlay - always visible */}
+      {/* Static grid overlay */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -65,7 +79,6 @@ export default function AnimatedBackground({
         }}
       />
 
-      {/* Animated elements - only after mount */}
       {mounted && (
         <>
           {/* Floating particles */}
