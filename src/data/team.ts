@@ -58,7 +58,7 @@ const team: {
   {
     name: "Kunal Verma",
     roles: ["Lead", "Web Dev"],
-    intro: "Either too crazy or too diabolic for you.",
+    intro: "Either too crazy or too diabolical for you.",
     urls: {
       github: "https://www.github.com/kunalverma06",
       linkedin: "https://www.linkedin.com/in/kunal-verma06",
@@ -175,7 +175,7 @@ const team: {
   {
     name: "Yukta Khatter ",
     roles: ["Lead", "Event Management"],
-    intro: "Leading the crew that turns 'what if into 'what an event!",
+    intro: "Leading the crew that turns what if into what an event!",
     urls: {
       github: "https://github.com/yukta2340",
       linkedin: "https://www.linkedin.com/in/yukta-khatter-ba70102b5",
@@ -186,7 +186,7 @@ const team: {
   {
     name: "Nishant Yadav ",
     roles: ["Co Lead", "Event Management"],
-    intro: "If jugaad was a person, it'd be him.",
+    intro: "If jugaad was a person, I'd be him.",
     urls: {
       github: "https://github.com/nishant04202005",
       linkedin: "https://www.linkedin.com/in/nishant-yadav-914684289",
