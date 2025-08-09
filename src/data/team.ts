@@ -69,10 +69,11 @@ const team: {
   {
     name: "Radhika Khatter",
     roles: ["Co Lead", "Web Dev"],
-    intro: "If sleep were an Olympic sport, I'd win — even on a park bench.",
+    intro: "Expecto patronum - against null pointers.",
     urls: {
       github: "https://github.com/radhika-khatter",
       linkedin: "https://www.linkedin.com/in/radhika-khatter-94a60b28a/",
+      twitter: "https://x.com/Radhika_Khatter",
     },
     image: Radhika,
     keywords: ["Co Lead", "Web Development"],
@@ -214,6 +215,7 @@ const team: {
     urls: {
       github: "https://github.com/beast955",
       linkedin: "https://www.linkedin.com/in/aayush-kathuria-8a4a96325",
+      twitter: "https://x.com/Aaaayyuuuuuuuuu",
     },
     keywords: ["Event Management"],
   },
