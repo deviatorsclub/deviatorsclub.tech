@@ -1,4 +1,18 @@
 const nextConfig = {
+  // Enable experimental features for better performance
+  experimental: {
+    optimizePackageImports: ["framer-motion", "lucide-react", "@heroicons/react"],
+  },
+
+  // Image optimization for better performance
+  images: {
+    formats: ["image/webp", "image/avif"],
+    minimumCacheTTL: 86400,
+  },
+
+  // Compression for smaller bundle sizes
+  compress: true,
+
   async headers() {
     return [
       {

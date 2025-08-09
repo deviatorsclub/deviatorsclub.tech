@@ -32,7 +32,7 @@ export default async function Page({ params }: PageProps) {
           <ChevronLeftIcon className="mr-2 h-5 w-5" />
           Back to Gallery
         </Link>
-        <h1 className="mb-4 font-pixelify bg-white bg-clip-text text-4xl font-bold text-transparent sm:text-5xl lg:text-6xl">
+        <h1 className="mb-4 bg-white bg-clip-text font-pixelify text-4xl font-bold text-transparent sm:text-5xl lg:text-6xl">
           {event.title}
         </h1>
         <p className="mb-2 text-xl text-gray-300">{event.caption}</p>

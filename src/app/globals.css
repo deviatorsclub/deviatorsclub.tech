@@ -187,7 +187,7 @@ body {
   }
 
   body {
-     @apply text-foreground;
-     /* Remove bg-background to let animated background show through */
+    @apply text-foreground;
+    /* Remove bg-background to let animated background show through */
   }
 }
