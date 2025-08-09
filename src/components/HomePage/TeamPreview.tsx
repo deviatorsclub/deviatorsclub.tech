@@ -96,8 +96,8 @@ export default function TeamPreview() {
 
               const isHovered = hoveredIndex === index;
 
-              // Increase z-index for hovered card
-              const finalZIndex = isHovered ? zIndex + 50 : zIndex;
+              // Increase z-index for hovered card (keeping it below navbar's z-50)
+              const finalZIndex = isHovered ? Math.min(zIndex + 5, 45) : zIndex;
 
               const scale =
                 hoveredIndex !== null && windowWidth >= 640
@@ -167,9 +167,9 @@ export default function TeamPreview() {
                   {hoveredIndex === index && (
                     <>
                       {/* Dark overlay for better button visibility */}
-                      <div className="absolute inset-0 z-[90] bg-black/40 transition-all duration-500 ease-out" />
+                      <div className="absolute inset-0 z-[41] bg-black/40 transition-all duration-500 ease-out" />
 
-                      <div className="absolute inset-0 z-[100] flex items-center justify-center transition-all duration-300">
+                      <div className="absolute inset-0 z-[42] flex items-center justify-center transition-all duration-300">
                         <Link
                           href="/team"
                           className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-4 py-2 text-sm text-white transition-all duration-500 hover:scale-105"
