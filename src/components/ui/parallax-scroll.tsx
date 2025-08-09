@@ -4,7 +4,6 @@ import { MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
-import Image from "next/image";
 import Link from "next/link";
 import { ALLIMAGESDATA } from "@/types/event";
 
@@ -16,7 +15,6 @@ export const ParallaxScroll = ({
   className?: string;
 }) => {
   const gridRef = useRef<HTMLDivElement>(null);
-
   const { scrollYProgress } = useScroll({
     container: gridRef,
     offset: ["start start", "end start"],
@@ -61,18 +59,16 @@ function RenderImage({
         style={{ y: translateY }}
         className="group relative overflow-hidden rounded-lg"
       >
-        <Image
+        <img
           src={el.src}
           className="transition-scale h-80 w-full object-cover duration-300 group-hover:scale-110"
           height={400}
           width={400}
           alt={title}
+          loading="lazy"
         />
-        {/* Overlay container */}
-        <div className="absolute inset-0 flex items-end justify-center bg-black/50 p-4 opacity-100 transition-opacity duration-300 sm:justify-start sm:opacity-0 sm:group-hover:opacity-100">
-          <h3 className="truncate text-center text-lg font-semibold text-white sm:text-xl">
-            {title}
-          </h3>
+        <div className="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <h3 className="text-lg font-semibold text-white">{title}</h3>
         </div>
       </motion.div>
     </Link>
