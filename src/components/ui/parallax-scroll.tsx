@@ -66,8 +66,11 @@ function RenderImage({
           width={400}
           alt={title}
         />
-        <div className="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
+        <div className="absolute inset-0 flex items-end justify-start p-4 opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
+          <div className="relative">
+            <div className="absolute inset-0 -m-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 shadow-lg"></div>
+            <h3 className="relative text-lg font-semibold text-white drop-shadow-sm">{title}</h3>
+          </div>
         </div>
       </motion.div>
     </Link>
