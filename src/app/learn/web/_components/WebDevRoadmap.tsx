@@ -36,9 +36,9 @@ export default function WebDevRoadmap() {
                     transition={{ delay: itemIdx * 0.1 }}
                     className="flex items-start space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
                   >
-                    <ChevronRight className="text-white mt-1 h-5 w-5 flex-shrink-0" />
+                    <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
                     <div>
-                      <h3 className="text-white/80 font-semibold">
+                      <h3 className="font-semibold text-white/80">
                         {item.title}
                       </h3>
                       <p className="text-sm text-gray-400">
@@ -55,7 +55,7 @@ export default function WebDevRoadmap() {
 
       <Card className="bg-black/5">
         <CardContent className="p-4">
-          <p className="text-gray-200 w-full text-center font-mono text-sm">
+          <p className="w-full text-center font-mono text-sm text-gray-200">
             Note: Check out Harkirat Singh&apos;s courses for a comprehensive
             learning experience from beginner to advanced topics.
           </p>

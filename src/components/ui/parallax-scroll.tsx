@@ -56,13 +56,13 @@ function RenderImage({
   slug: string;
 }) {
   return (
-    <Link href={`/gallery/${slug}`}>
+    <Link href={"/gallery/" + slug}>
       <motion.div
         style={{ y: translateY }}
         className="group relative overflow-hidden rounded-lg"
       >
         <Image
-          src={el}
+          src={el.src}
           className="transition-scale h-80 w-full object-cover duration-300 group-hover:scale-110"
           height={400}
           width={400}

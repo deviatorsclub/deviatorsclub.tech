@@ -15,8 +15,9 @@ interface PageProps {
 }
 
 export default async function Page({ params }: PageProps) {
-  const { eventSlug } = await params;
-  const event = events.find((e) => e.slug == decodeURIComponent(eventSlug));
+  const resolvedParams = await params;
+  const { eventSlug } = resolvedParams;
+  const event = events.find((e) => e.slug === decodeURIComponent(eventSlug));
 
   if (!event) {
     notFound();
