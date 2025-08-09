@@ -9,9 +9,9 @@ import Image6 from "@/assets/events/dockerSession/6.png";
 
 export const DockerSession: Omit<EVENT, "slug"> = {
   title: "Docker Basics Session",
-  caption: `Containerizing creativity! 🐳✨ Our Docker basics session was a hit, diving into the world of containers with the incredible Deviators community. From setup to deployment, we're building the future, one Dockerfile at a time! 💻🚀`,
+  caption: `Can't"Containerizing creativity! 🐳✨ Our Docker basics session was a hit, diving into the world of containers with the incredible Deviators community. From setup to deployment, we're building the future, one Dockerfile at a time! 💻🚀"`,
   // 15 august 2024
-  date: new Date("2024-08-01T18:25:00.000Z"),
+  date: new Date("2024-08-15T18:25:00.000Z"),
   images: [Image1, Image2, Image3, Image4, Image5, Image6],
   index: 1,
 };

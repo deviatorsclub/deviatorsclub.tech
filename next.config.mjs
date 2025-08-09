@@ -1,17 +1,4 @@
 const nextConfig = {
-  experimental: {
-    // Disable problematic turbo optimizations that can cause source map issues
-    turbotrace: {
-      logLevel: 'error'
-    }
-  },
-  // Improve source map handling in development
-  webpack: (config, { dev, isServer }) => {
-    if (dev && !isServer) {
-      config.devtool = 'eval-source-map';
-    }
-    return config;
-  },
   async headers() {
     return [
       {

@@ -22,11 +22,7 @@ const eventsWithSlug: Omit<EVENT, "slug">[] = [
 const events = eventsWithSlug
   .map((event) => ({
     ...event,
-    slug: event.title
-      .toLowerCase()
-      .replace(/[&]/g, "and")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, ""),
+    slug: event.title.toLowerCase().replace(/\s+/g, "-"),
   }))
   .sort((a, b) => b.date.getTime() - a.date.getTime());
 
