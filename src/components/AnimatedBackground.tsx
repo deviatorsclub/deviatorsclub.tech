@@ -35,24 +35,30 @@ const SHAPES = Array.from({ length: 3 }, (_, i) => ({
 }));
 
 export default function AnimatedBackground({
-  className = "fixed left-0 top-0 w-full -z-10",
+  className = "fixed left-0 top-0 w-full -z-50",
 }: AnimatedBackgroundProps) {
   const [mounted, setMounted] = useState(false);
   const [vh, setVh] = useState("100vh");
 
   useEffect(() => {
     function setFullHeight() {
+      // Handle mobile viewport changes more robustly
       const height = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${height}px`);
       setVh(`calc(var(--vh) * 100)`);
     }
+
     setFullHeight();
     window.addEventListener("resize", setFullHeight);
-    const timer = setTimeout(() => setMounted(true), 100);
+    window.addEventListener("orientationchange", setFullHeight);
+
+    // Reduce delay to minimize white flash
+    const timer = setTimeout(() => setMounted(true), 50);
 
     return () => {
       clearTimeout(timer);
       window.removeEventListener("resize", setFullHeight);
+      window.removeEventListener("orientationchange", setFullHeight);
     };
   }, []);
 
@@ -61,13 +67,18 @@ export default function AnimatedBackground({
       className={className}
       style={{
         height: vh,
+        minHeight: "100dvh",
         position: "fixed",
+        width: "100vw",
+        // Ensure coverage on mobile browsers
+        WebkitTransform: "translateZ(0)",
+        transform: "translateZ(0)",
       }}
     >
-      {/* Base gradient background */}
+      {/* Base gradient background - always visible to prevent white flash */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
 
-      {/* Static grid overlay */}
+      {/* Static grid overlay - always visible */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -79,6 +90,7 @@ export default function AnimatedBackground({
         }}
       />
 
+      {/* Conditionally render only the animated elements */}
       {mounted && (
         <>
           {/* Floating particles */}
