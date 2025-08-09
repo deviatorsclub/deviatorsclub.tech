@@ -52,7 +52,6 @@ export default function TeamPreview() {
             {shuffledMembers.map((member, index) => {
               let tilt = 0;
               let zIndex = 1;
-              let overlap = windowWidth < 640 ? 20 : 40;
               let cardWidth = windowWidth < 640 ? 110 : 200;
               // Desktop properties
               if (windowWidth >= 640) {
@@ -73,8 +72,6 @@ export default function TeamPreview() {
                 // z-index order: card 2 > card 1,3
                 if (index === 1) zIndex = 40;
                 else zIndex = 39;
-                // overlap
-                overlap = 30;
                 cardWidth = 110;
               }
               const cardHeight = windowWidth < 640 ? 160 : 300;
@@ -82,7 +79,6 @@ export default function TeamPreview() {
 
               // Calculate arch positioning
               const distanceFromCenter = Math.abs(index - middle);
-              const archRadius = windowWidth < 640 ? 100 : 180;
               const archHeight = windowWidth < 640 ? 30 : 60;
 
               // Calculate horizontal position (spread cards along the arch)
@@ -90,16 +86,18 @@ export default function TeamPreview() {
               const horizontalOffset = (index - middle) * horizontalSpacing;
 
               // Calculate vertical position (arch effect)
-              const verticalOffset = distanceFromCenter * distanceFromCenter * (archHeight / (middle * middle));
+              const verticalOffset =
+                distanceFromCenter *
+                distanceFromCenter *
+                (archHeight / (middle * middle));
 
               const left = `calc(50% + ${horizontalOffset}px - ${cardWidth / 2}px)`;
               const top = `calc(50% + ${verticalOffset}px - ${cardHeight / 2}px)`;
 
-              const isMiddleCard = index === middle;
               const isHovered = hoveredIndex === index;
 
-              // Increase z-index for hovered card
-              const finalZIndex = isHovered ? zIndex + 50 : zIndex;
+              // Increase z-index for hovered card (keeping it below navbar's z-50)
+              const finalZIndex = isHovered ? Math.min(zIndex + 5, 45) : zIndex;
 
               const scale =
                 hoveredIndex !== null && windowWidth >= 640
@@ -115,7 +113,7 @@ export default function TeamPreview() {
               return (
                 <div
                   key={member.name}
-                  className={`absolute flex flex-col items-center justify-center transition-all duration-500 overflow-hidden`}
+                  className={`absolute flex flex-col items-center justify-center overflow-hidden transition-all duration-500`}
                   style={{
                     height: `${cardHeight}px`,
                     width: `${cardWidth}px`,
@@ -125,15 +123,16 @@ export default function TeamPreview() {
                     zIndex: finalZIndex,
                     left,
                     top,
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
-                    border: '1px solid rgba(255,255,255,0.2)',
-                    backdropFilter: 'blur(20px) saturate(180%)',
-                    WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    backdropFilter: "blur(20px) saturate(180%)",
+                    WebkitBackdropFilter: "blur(20px) saturate(180%)",
                     boxShadow: `
                       0 8px 32px rgba(0,0,0,0.12),
                       inset 0 1px 0 rgba(255,255,255,0.2),
                       inset 0 -1px 0 rgba(255,255,255,0.1)
-                    `
+                    `,
                   }}
                   onMouseEnter={() =>
                     windowWidth >= 640 && setHoveredIndex(index)
@@ -168,30 +167,32 @@ export default function TeamPreview() {
                   {hoveredIndex === index && (
                     <>
                       {/* Dark overlay for better button visibility */}
-                      <div className="absolute inset-0 z-[90] bg-black/40 transition-all duration-500 ease-out" />
+                      <div className="absolute inset-0 z-[41] bg-black/40 transition-all duration-500 ease-out" />
 
-                      <div className="absolute inset-0 z-[100] flex items-center justify-center transition-all duration-300">
+                      <div className="absolute inset-0 z-[42] flex items-center justify-center transition-all duration-300">
                         <Link
                           href="/team"
                           className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-4 py-2 text-sm text-white transition-all duration-500 hover:scale-105"
                           style={{
-                            background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
-                            border: '1px solid rgba(255,255,255,0.2)',
-                            backdropFilter: 'blur(20px) saturate(180%)',
-                            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                            background:
+                              "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+                            border: "1px solid rgba(255,255,255,0.2)",
+                            backdropFilter: "blur(20px) saturate(180%)",
+                            WebkitBackdropFilter: "blur(20px) saturate(180%)",
                             boxShadow: `
                             0 8px 32px rgba(0,0,0,0.12),
                             inset 0 1px 0 rgba(255,255,255,0.2),
                             inset 0 -1px 0 rgba(255,255,255,0.1)
-                          `
+                          `,
                           }}
                         >
                           {/* Gradient overlay for extra glass effect */}
                           <div
                             className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                             style={{
-                              background: 'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%)',
-                              borderRadius: 'inherit'
+                              background:
+                                "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%)",
+                              borderRadius: "inherit",
                             }}
                           />
 
@@ -199,13 +200,16 @@ export default function TeamPreview() {
                           <div
                             className="absolute inset-0 opacity-0 transition-all duration-700 group-hover:opacity-100"
                             style={{
-                              background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%)',
-                              transform: 'translateX(-100%)',
-                              borderRadius: 'inherit'
+                              background:
+                                "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%)",
+                              transform: "translateX(-100%)",
+                              borderRadius: "inherit",
                             }}
                           />
 
-                          <span className="relative z-10 font-medium">View Full Team</span>
+                          <span className="relative z-10 font-medium">
+                            View Full Team
+                          </span>
                           <svg
                             className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                             fill="none"

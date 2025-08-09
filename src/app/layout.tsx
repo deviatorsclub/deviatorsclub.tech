@@ -16,6 +16,7 @@ const pixelifySans = localFont({
   fallback: ["cursive", "Arial", "sans-serif"],
   preload: true,
   variable: "--font-pixelify",
+  weight: "400",
 });
 
 // Quicksand font for body text
@@ -23,7 +24,7 @@ const quicksand = Quicksand({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
-  fallback: ["Arial", "sans-serif"],
+  fallback: ["system-ui", "Arial", "sans-serif"],
   preload: true,
   variable: "--font-quicksand",
   adjustFontFallback: false,
@@ -47,12 +48,15 @@ export default function RootLayout({
       <head>
         {/* Basic meta tags and icons */}
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${quicksand.className} antialiased`}>
+      <body className={`${quicksand.className} min-h-screen antialiased`}>
         {/* Animated background and navigation */}
         <AnimatedBackground />
         <Navbar />

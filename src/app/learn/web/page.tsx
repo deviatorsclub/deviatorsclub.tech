@@ -127,7 +127,7 @@ const WebDevResources = () => {
           className="mt-8 text-center text-sm text-gray-400"
         >
           <p className="mb-4 text-lg text-gray-300">
-            For further assistance, contact the Deviators web dev team:
+            For further assistance, contact the Deviators Web Development team:
           </p>
           <DisplayTeam keyword="Web Development" />
         </motion.div>

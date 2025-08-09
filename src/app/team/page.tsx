@@ -132,10 +132,16 @@ export default function TeamSection() {
                         className="text-gray-400 transition-colors hover:text-Blue"
                       >
                         {key === "github" && <FaGithub className="h-5 w-5" />}
-                        {key === "linkedin" && <FaLinkedin className="h-5 w-5" />}
-                        {key === "twitter" && <FaXTwitter className="h-5 w-5" />}
+                        {key === "linkedin" && (
+                          <FaLinkedin className="h-5 w-5" />
+                        )}
+                        {key === "twitter" && (
+                          <FaXTwitter className="h-5 w-5" />
+                        )}
                         {key === "portfolio" && <FaLink className="h-5 w-5" />}
-                        {key === "leetcode" && <SiLeetcode className="h-5 w-5" />}
+                        {key === "leetcode" && (
+                          <SiLeetcode className="h-5 w-5" />
+                        )}
                       </Link>
                     ))}
                   </div>

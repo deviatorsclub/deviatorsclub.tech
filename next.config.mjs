@@ -1,17 +1,18 @@
 const nextConfig = {
+  // Enable experimental features for better performance
   experimental: {
-    // Disable problematic turbo optimizations that can cause source map issues
-    turbotrace: {
-      logLevel: 'error'
-    }
+    optimizePackageImports: ["framer-motion", "lucide-react", "@heroicons/react"],
   },
-  // Improve source map handling in development
-  webpack: (config, { dev, isServer }) => {
-    if (dev && !isServer) {
-      config.devtool = 'eval-source-map';
-    }
-    return config;
+
+  // Image optimization for better performance
+  images: {
+    formats: ["image/webp", "image/avif"],
+    minimumCacheTTL: 86400,
   },
+
+  // Compression for smaller bundle sizes
+  compress: true,
+
   async headers() {
     return [
       {

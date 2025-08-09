@@ -7,6 +7,13 @@
   .text-shadow-neon {
     text-shadow: 0 0 10px rgba(0, 255, 245, 0.7);
   }
+
+  /* Utility for proper mobile viewport handling */
+  .mobile-vh-fix {
+    height: 100vh;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 /* Animation keyframes for floating, spinning, and pulsing effects */
@@ -76,7 +83,43 @@
 
 html,
 body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   scroll-behavior: smooth;
+  /* Only set background on html as ultimate fallback */
+}
+
+/* Fix for mobile viewport height changes when address bar shows/hides */
+html {
+  height: -webkit-fill-available;
+  /* Prevent white flash during initial load - only on html */
+  background: #000000;
+}
+
+body {
+  height: -webkit-fill-available;
+  /* Additional mobile-specific height fixes */
+  min-height: -webkit-fill-available;
+  /* Remove black background from body to let animated background show */
+}
+
+/* Prevent white background flashes on any element */
+* {
+  box-sizing: border-box;
+}
+
+/* Additional mobile safari fixes */
+@supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
+
+  body {
+    min-height: -webkit-fill-available;
+  }
 }
 
 /* Light and dark theme CSS variables */
@@ -144,6 +187,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    /* Remove bg-background to let animated background show through */
   }
 }

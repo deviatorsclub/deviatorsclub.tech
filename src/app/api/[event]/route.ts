@@ -13,7 +13,8 @@ export async function GET(
       JSON.stringify(
         eventData.images.map((image) => ({
           ...image,
-          src: `${process.env.NEXT_PUBLIC_API_URL}${image.src.replace("/server/assets/", "/_next/static/media/")}`,
+          // For static imports, src is already the correct path
+          src: image.src,
         })),
       ),
       { status: 200 },

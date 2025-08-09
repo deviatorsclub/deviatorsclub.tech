@@ -1,16 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import deviatorsLogoMin from "@/assets/logo/sm.svg";
 import navItems from "@/data/navItems";
 
-export default function Navigation() {
+const Navigation = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+
+  const handleMenuToggle = useCallback(() => {
+    setIsMenuOpen((prev) => !prev);
+  }, []);
+
+  const handleMenuClose = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
 
   useEffect(() => {
     setMounted(true);
@@ -73,7 +81,7 @@ export default function Navigation() {
           </div>
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={handleMenuToggle}
               className={`inline-flex items-center justify-center rounded-md p-2 transition-colors duration-300 ease-in-out ${
                 mounted && (isScrolled || isMenuOpen)
                   ? "bg-white/10 text-white"
@@ -105,7 +113,7 @@ export default function Navigation() {
               key={item.name}
               href={item.link}
               className="flex items-center space-x-3 rounded-md px-3 py-3 text-base font-medium text-white transition duration-150 ease-in-out hover:bg-white/10"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={handleMenuClose}
             >
               <item.icon className="h-5 w-5" />
               <span>{item.name}</span>
@@ -115,4 +123,8 @@ export default function Navigation() {
       </div>
     </nav>
   );
-}
+});
+
+Navigation.displayName = "Navigation";
+
+export default Navigation;
