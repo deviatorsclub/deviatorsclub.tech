@@ -18,8 +18,8 @@ Yes the much awaited debug decrypt event was organized in dronathon 2024 live wi
 The goal was to let the young budding minds to solve the incorrect codes with the utmost accuracy!!!
 Stay tuned for more such events and participate as much as u can cause you know what they say???
 NOBODY IS PERFECT`,
-  // 13 august 2024
-  date: new Date("2024-08-13T18:25:00.000Z"),
+  // 5 april 2024
+  date: new Date("2024-04-05T18:25:00.000Z"),
   images: [
     Image1,
     Image2,
