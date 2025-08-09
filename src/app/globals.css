@@ -76,6 +76,10 @@
 
 html,
 body {
+  background-color: #000; /* Fallback color for repaint lag */
+  background-image: linear-gradient(to bottom right, #000000, #111111); /* Match animated background base */
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -144,6 +148,6 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    color: hsl(var(--foreground));
   }
 }

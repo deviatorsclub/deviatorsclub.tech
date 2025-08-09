@@ -35,7 +35,7 @@ const SHAPES = Array.from({ length: 3 }, (_, i) => ({
 }));
 
 export default function AnimatedBackground({
-  className = "fixed left-0 top-0 w-full -z-10",
+  className = "absolute left-0 top-0 w-full -z-10",
 }: AnimatedBackgroundProps) {
   const [mounted, setMounted] = useState(false);
   const [vh, setVh] = useState("100vh");
