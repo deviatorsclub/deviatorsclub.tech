@@ -7,6 +7,7 @@ import { OrientationProgram24 } from "./orientationProgram24";
 import { IOSLabSessions } from "./iosLabSession";
 import { DockerSession } from "./dockerSession";
 import { Devolympus } from "./devolympus";
+import { OrientationProgram25 } from "./orientationProgram25";
 
 const eventsWithSlug: Omit<EVENT, "slug">[] = [
   DebugDecrypt,
@@ -17,6 +18,7 @@ const eventsWithSlug: Omit<EVENT, "slug">[] = [
   IOSLabSessions,
   DockerSession,
   Devolympus,
+  OrientationProgram25,
 ];
 
 const events = eventsWithSlug
