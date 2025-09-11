@@ -10,11 +10,12 @@ import Isha from "@/assets/team/Isha.webp";
 import Kunal from "@/assets/team/Kunal.webp";
 import Tanmay from "@/assets/team/Tanmay.webp";
 import Pooja from "@/assets/team/Pooja.webp";
-import Nishant from "@/assets/team/Nishant.webp";
 import Riya from "@/assets/team/Riya.webp";
 import Bhavya from "@/assets/team/Bhavya.webp";
 import Radhika from "@/assets/team/Radhika.webp";
-
+import SukratiMam from "@/assets/team/SukratiMam.webp";
+import Nikhil from "@/assets/team/Nikhil.webp";
+import Kartik from "@/assets/team/Kartik.webp";
 import { StaticImageData } from "next/image";
 
 const team: {
@@ -22,7 +23,7 @@ const team: {
   roles: string[];
   intro: string;
   urls: {
-    github: string;
+    github?: string;
     linkedin: string;
     twitter?: string;
     portfolio?: string;
@@ -31,6 +32,17 @@ const team: {
   image: StaticImageData;
   keywords: string[];
 }[] = [
+  {
+    name: "Dr. Sukrati Chaturvedi",
+    roles: ["Faculty Coordinator"],
+    intro: "PhD in Artificial Intelligence and Machine Learning",
+    urls: {
+      linkedin: "https://www.linkedin.com/in/sukrati-chaturvedi-7395621a5/",
+    },
+    image: SukratiMam,
+    keywords: ["Faculty Coordinator"],
+  },
+
   {
     name: "Pooja Goel",
     roles: ["President"],
@@ -126,6 +138,17 @@ const team: {
     keywords: ["Co Lead", "DSA"],
   },
   {
+    name: "Kartik",
+    roles: ["Lead", "AI/ML"],
+    intro: "It's me and my huh against the world",
+    urls: {
+      github: "https://github.com/KartikGhansela",
+      linkedin: "https://www.linkedin.com/in/kartik-ghansela-a9bb41332/",
+    },
+    image: Kartik,
+    keywords: ["Lead", "AI/ML"],
+  },
+  {
     name: "Isha Nayal",
     roles: ["Co Lead", "AI/ML"],
     intro: "Training models and my patience.",
@@ -174,6 +197,17 @@ const team: {
     keywords: ["Co Lead", "Social Media"],
   },
   {
+    name: "Nikhil",
+    roles: ["Video Editor", "Social Media"],
+    image: Nikhil,
+    intro: "Editing life frame by frame",
+    urls: {
+      github: "https://github.com/nikkhil-05",
+      linkedin: "https://www.linkedin.com/in/nikhil-kumar-engg",
+    },
+    keywords: ["Video Editor", "Social Media"],
+  },
+  {
     name: "Yukta Khatter ",
     roles: ["Lead", "Event Management"],
     intro: "Leading the crew that turns what if into what an event!",
@@ -183,17 +217,6 @@ const team: {
     },
     image: Yukta,
     keywords: ["Lead", "Event Management"],
-  },
-  {
-    name: "Nishant Yadav ",
-    roles: ["Co Lead", "Event Management"],
-    intro: "If jugaad was a person, I'd be him.",
-    urls: {
-      github: "https://github.com/nishant04202005",
-      linkedin: "https://www.linkedin.com/in/nishant-yadav-914684289",
-    },
-    image: Nishant,
-    keywords: ["Co Lead", "Event Management"],
   },
   {
     name: "Daksh Sharma",

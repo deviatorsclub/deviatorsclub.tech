@@ -11,6 +11,7 @@ import { SiLeetcode } from "react-icons/si";
 
 const categories = [
   "All",
+  "Faculty Coordinator",
   "President",
   "Web Development",
   "AI/ML",

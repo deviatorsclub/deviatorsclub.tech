@@ -5,7 +5,7 @@ export type TeamMember = {
   roles: string[];
   intro: string;
   urls: {
-    github: string;
+    github?: string;
     linkedin: string;
     twitter?: string;
     portfolio?: string;
