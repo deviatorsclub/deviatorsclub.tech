@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metaDataBase: Metadata = {
-  title: "Deviators Club",
+  title: "Deviators Club - Premier Tech Community & Innovation Hub",
   description:
-    "Join Deviators Club to explore groundbreaking ideas, collaborate with innovative minds, and transform concepts into reality. Connect with fellow creators and entrepreneurs.",
+    "Deviators Club is the leading tech community fostering innovation, collaboration, and skill development. Join our exclusive network of developers, entrepreneurs, and tech enthusiasts to explore cutting-edge technologies, participate in hackathons, and transform groundbreaking ideas into reality.",
   keywords:
-    "innovation, collaboration, creative ideas, entrepreneurship, startup community, idea exploration, DCE tech community",
+    "Deviators Club, tech community, innovation hub, programming club, developer community, tech events, hackathons, coding workshops, entrepreneurship, startup incubator, technology education, software development, web development, mobile app development, cybersecurity, data structures algorithms, DCE, Delhi College of Engineering, student tech community, coding bootcamp, tech meetups, innovation lab",
   authors: [{ name: "Deviators Club" }],
   creator: "Deviators Club",
   publisher: "Deviators Club",
@@ -14,9 +14,9 @@ export const metaDataBase: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Deviators Club",
+    title: "Deviators Club - Premier Tech Community & Innovation Hub",
     description:
-      "Join Deviators Club to explore groundbreaking ideas, collaborate with innovative minds, and transform concepts into reality.",
+      "Deviators Club is the leading tech community at DCE fostering innovation, collaboration, and skill development. Join our exclusive network of developers, entrepreneurs, and tech enthusiasts.",
     url: "https://deviatorsclub.tech",
     siteName: "Deviators Club",
     images: [
@@ -24,7 +24,7 @@ export const metaDataBase: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Deviators Club",
+        alt: "Deviators Club - Premier Tech Community & Innovation Hub",
       },
     ],
     locale: "en_US",
@@ -32,9 +32,9 @@ export const metaDataBase: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deviators Club",
+    title: "Deviators Club - Premier Tech Community & Innovation Hub",
     description:
-      "Join Deviators Club to explore groundbreaking ideas, collaborate with innovative minds, and transform concepts into reality.",
+      "Deviators Club is the leading tech community fostering innovation, collaboration, and skill development. Join our exclusive network of developers and tech enthusiasts.",
     images: ["/og-image.jpg"],
     creator: "@deviatorsclub",
     site: "@deviatorsclub",
