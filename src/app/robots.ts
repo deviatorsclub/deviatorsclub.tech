@@ -1,4 +1,6 @@
-export default function robots() {
+import { MetadataRoute } from "next";
+
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
@@ -12,7 +14,6 @@ export default function robots() {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://deviatorsclub.tech/sitemap.xml",
-    host: "https://deviatorsclub.tech",
+    sitemap: "https://www.deviatorsclub.tech/sitemap.xml",
   };
 }
