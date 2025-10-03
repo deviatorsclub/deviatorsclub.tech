@@ -14,7 +14,7 @@ export const metaDataBase: Metadata = {
   publisher: "Deviators Club",
   metadataBase: new URL("https://deviatorsclub.tech"),
   alternates: {
-    canonical: "/",
+    canonical: "https://deviatorsclub.tech",
   },
   openGraph: {
     title: "Deviators Club - Code. Create. Deviate.",

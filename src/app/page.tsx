@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Deviators Club empowers coders and innovators to learn, build, and lead with workshops, hackathons, and collaborative tech projects. Join our passionate community of developers and tech enthusiasts to transform ideas into reality!",
   keywords:
     "Deviators Club, Code Create Deviate, tech community, hackathons, coding workshops, collaborative tech projects, programming club, innovation hub, developer community, tech empowerment",
+  alternates: {
+    canonical: "https://deviatorsclub.tech",
+  },
   openGraph: {
     title: "Deviators Club - Code. Create. Deviate.",
     description:

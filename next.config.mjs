@@ -13,22 +13,6 @@ const nextConfig = {
   // Compression for smaller bundle sizes
   compress: true,
 
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.deviatorsclub.tech",
-          },
-        ],
-        destination: "https://deviatorsclub.tech/:path*",
-        permanent: true,
-      },
-    ];
-  },
-
   async headers() {
     return [
       {
