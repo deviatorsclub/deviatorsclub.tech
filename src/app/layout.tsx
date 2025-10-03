@@ -6,6 +6,10 @@ import Navbar from "@/components/Navbar";
 import localFont from "next/font/local";
 import { Quicksand } from "next/font/google";
 import { metaDataBase } from "@/data/metaData";
+import {
+  organizationStructuredData,
+  websiteStructuredData,
+} from "@/data/structuredData";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -52,9 +56,24 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
       </head>
       <body className={`${quicksand.className} min-h-screen antialiased`}>
         {/* Animated background and navigation */}

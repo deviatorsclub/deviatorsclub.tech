@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Essential pages for crawling
+Allow: /
+Allow: /team
+Allow: /gallery
+Allow: /learn
+Allow: /we-are-hiring
+
+# API routes - block crawling
+Disallow: /api/
+
+# Static assets - allow crawling
+Allow: /assets/
+Allow: /fonts/
+Allow: /_next/static/
+
+# Sitemap location
+Sitemap: https://deviatorsclub.tech/sitemap.xml
