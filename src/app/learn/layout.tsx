@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       "Explore comprehensive learning resources for web development, cybersecurity, iOS development, and DSA. Free tutorials and projects by Deviators Club.",
     images: ["/group_pic.jpg"],
-    url: "https://deviatorsclub.tech/learn",
+    url: "https://www.deviatorsclub.tech/learn",
   },
 };
 

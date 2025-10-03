@@ -5,9 +5,9 @@ export const organizationStructuredData = {
   alternateName: "Code. Create. Deviate.",
   description:
     "Deviators Club empowers coders and innovators to learn, build, and lead with workshops, hackathons, and collaborative tech projects.",
-  url: "https://deviatorsclub.tech",
-  logo: "https://deviatorsclub.tech/assets/logo/sm.svg",
-  image: "https://deviatorsclub.tech/group_pic.jpg",
+  url: "https://www.deviatorsclub.tech",
+  logo: "https://www.deviatorsclub.tech/assets/logo/sm.svg",
+  image: "https://www.deviatorsclub.tech/group_pic.jpg",
   sameAs: [
     "https://instagram.com/deviatorsclub",
     "https://linkedin.com/company/deviatorsclub",
@@ -44,15 +44,15 @@ export const organizationStructuredData = {
       organizer: {
         "@type": "Organization",
         name: "Deviators Club",
-        url: "https://deviatorsclub.tech",
+        url: "https://www.deviatorsclub.tech",
       },
-      image: "https://deviatorsclub.tech/group_pic.jpg",
+      image: "https://www.deviatorsclub.tech/group_pic.jpg",
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "INR",
         availability: "https://schema.org/InStock",
-        url: "https://deviatorsclub.tech/learn/web",
+        url: "https://www.deviatorsclub.tech/learn/web",
       },
     },
     {
@@ -74,15 +74,15 @@ export const organizationStructuredData = {
       organizer: {
         "@type": "Organization",
         name: "Deviators Club",
-        url: "https://deviatorsclub.tech",
+        url: "https://www.deviatorsclub.tech",
       },
-      image: "https://deviatorsclub.tech/group_pic.jpg",
+      image: "https://www.deviatorsclub.tech/group_pic.jpg",
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "INR",
         availability: "https://schema.org/InStock",
-        url: "https://deviatorsclub.tech/learn/cyber",
+        url: "https://www.deviatorsclub.tech/learn/cyber",
       },
     },
     {
@@ -104,15 +104,15 @@ export const organizationStructuredData = {
       organizer: {
         "@type": "Organization",
         name: "Deviators Club",
-        url: "https://deviatorsclub.tech",
+        url: "https://www.deviatorsclub.tech",
       },
-      image: "https://deviatorsclub.tech/group_pic.jpg",
+      image: "https://www.deviatorsclub.tech/group_pic.jpg",
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "INR",
         availability: "https://schema.org/InStock",
-        url: "https://deviatorsclub.tech/learn/ios",
+        url: "https://www.deviatorsclub.tech/learn/ios",
       },
     },
     {
@@ -134,15 +134,15 @@ export const organizationStructuredData = {
       organizer: {
         "@type": "Organization",
         name: "Deviators Club",
-        url: "https://deviatorsclub.tech",
+        url: "https://www.deviatorsclub.tech",
       },
-      image: "https://deviatorsclub.tech/group_pic.jpg",
+      image: "https://www.deviatorsclub.tech/group_pic.jpg",
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "INR",
         availability: "https://schema.org/InStock",
-        url: "https://deviatorsclub.tech/learn/dsa",
+        url: "https://www.deviatorsclub.tech/learn/dsa",
       },
     },
   ],
@@ -153,7 +153,7 @@ export const websiteStructuredData = {
   "@type": "WebSite",
   name: "Deviators Club",
   alternateName: "Code. Create. Deviate.",
-  url: "https://deviatorsclub.tech",
+  url: "https://www.deviatorsclub.tech",
   description:
     "Official website of Deviators Club - Empowering coders and innovators through workshops, hackathons, and collaborative tech projects",
   publisher: {
@@ -164,7 +164,8 @@ export const websiteStructuredData = {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://deviatorsclub.tech/search?q={search_term_string}",
+      urlTemplate:
+        "https://www.deviatorsclub.tech/search?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },

@@ -12,15 +12,15 @@ export const metaDataBase: Metadata = {
   authors: [{ name: "Deviators Club" }],
   creator: "Deviators Club",
   publisher: "Deviators Club",
-  metadataBase: new URL("https://deviatorsclub.tech"),
+  metadataBase: new URL("https://www.deviatorsclub.tech"),
   alternates: {
-    canonical: "https://deviatorsclub.tech",
+    canonical: "https://www.deviatorsclub.tech",
   },
   openGraph: {
     title: "Deviators Club - Code. Create. Deviate.",
     description:
       "Deviators Club empowers coders and innovators to learn, build, and lead. Join our community for workshops, hackathons, and collaborative tech projects. Transform ideas into reality!",
-    url: "https://deviatorsclub.tech",
+    url: "https://www.deviatorsclub.tech",
     siteName: "Deviators Club",
     images: [
       {

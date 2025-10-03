@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   keywords:
     "Deviators Club, Code Create Deviate, tech community, hackathons, coding workshops, collaborative tech projects, programming club, innovation hub, developer community, tech empowerment",
   alternates: {
-    canonical: "https://deviatorsclub.tech",
+    canonical: "https://www.deviatorsclub.tech",
   },
   openGraph: {
     title: "Deviators Club - Code. Create. Deviate.",
     description:
       "Deviators Club empowers coders and innovators with workshops, hackathons, and collaborative tech projects. Join our community and transform ideas into reality!",
     images: ["/group_pic.jpg"],
-    url: "https://deviatorsclub.tech",
+    url: "https://www.deviatorsclub.tech",
   },
   twitter: {
     title: "Deviators Club - Code. Create. Deviate.",

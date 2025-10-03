@@ -17,4 +17,4 @@ Allow: /fonts/
 Allow: /_next/static/
 
 # Sitemap location
-Sitemap: https://deviatorsclub.tech/sitemap.xml
+Sitemap: https://www.deviatorsclub.tech/sitemap.xml

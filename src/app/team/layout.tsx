@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       "Meet the passionate team behind Deviators Club. Diverse group of developers, designers, and tech enthusiasts driving innovation.",
     images: ["/group_pic.jpg"],
-    url: "https://deviatorsclub.tech/team",
+    url: "https://www.deviatorsclub.tech/team",
   },
 };
 
