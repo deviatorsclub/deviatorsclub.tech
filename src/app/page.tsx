@@ -20,15 +20,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Deviators Club - Code. Create. Deviate.",
     description:
-      "Deviators Club empowers coders and innovators with workshops, hackathons, and collaborative tech projects. Join our community and transform ideas into reality!",
-    images: ["/group_pic.jpg"],
-    url: "https://www.deviatorsclub.tech",
+      "Deviators Club empowers coders and innovators to learn, build, and lead. Join our community for workshops, hackathons, and collaborative tech projects.",
+    images: ["/banner.png"],
   },
   twitter: {
-    title: "Deviators Club - Code. Create. Deviate.",
-    description:
-      "Deviators Club empowers coders and innovators with workshops, hackathons & collaborative tech projects!",
-    images: ["/group_pic.jpg"],
+    card: "summary_large_image",
+    images: ["/banner.png"],
   },
 };
 
