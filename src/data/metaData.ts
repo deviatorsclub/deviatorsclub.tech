@@ -24,7 +24,7 @@ export const metaDataBase: Metadata = {
     siteName: "Deviators Club",
     images: [
       {
-        url: "/group_pic.jpg",
+        url: "/banner.png",
         width: 1200,
         height: 630,
         alt: "Deviators Club - Code. Create. Deviate. Premier Tech Community",
@@ -39,7 +39,7 @@ export const metaDataBase: Metadata = {
     title: "Deviators Club - Code. Create. Deviate.",
     description:
       "Deviators Club empowers coders and innovators with workshops, hackathons & collaborative tech projects. Join our community and transform ideas into reality!",
-    images: ["/group_pic.jpg"],
+    images: ["/banner.png"],
     creator: "@deviatorsclub",
     site: "@deviatorsclub",
   },
