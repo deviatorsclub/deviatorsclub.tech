@@ -1,5 +1,5 @@
 import { EVENT } from "@/types/event";
-import { GitGithub } from "./gitGithub";
+import { GitGithub24 } from "./gitGithub24";
 import { DebugDecrypt } from "./debugDecrypt";
 import { CyberSec } from "./cyberSec";
 import { EngineersDay } from "./engineersDay";
@@ -9,10 +9,10 @@ import { DockerSession } from "./dockerSession";
 import { Devolympus } from "./devolympus";
 import { OrientationProgram25 } from "./orientationProgram25";
 import { DebugDecrypt25 } from "./debugDecrypt25";
-
+import { GitGithub25 } from "./gitGithub25";
 const eventsWithSlug: Omit<EVENT, "slug">[] = [
   DebugDecrypt,
-  GitGithub,
+  GitGithub24,
   CyberSec,
   EngineersDay,
   OrientationProgram24,
@@ -21,6 +21,7 @@ const eventsWithSlug: Omit<EVENT, "slug">[] = [
   Devolympus,
   OrientationProgram25,
   DebugDecrypt25,
+  GitGithub25,
 ];
 
 const events = eventsWithSlug
