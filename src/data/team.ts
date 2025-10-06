@@ -35,7 +35,7 @@ const team: {
   {
     name: "Dr. Sukrati Chaturvedi",
     roles: ["Faculty Coordinator"],
-    intro: "PhD in Artificial Intelligence and Machine Learning",
+    intro: "PhD in Artificial Intelligence and Machine Learning.",
     urls: {
       linkedin: "https://www.linkedin.com/in/sukrati-chaturvedi-7395621a5/",
     },
@@ -140,7 +140,7 @@ const team: {
   {
     name: "Kartik",
     roles: ["Lead", "AI/ML"],
-    intro: "It's me and my huh against the world",
+    intro: "It's me and my huh against the world.",
     urls: {
       github: "https://github.com/KartikGhansela",
       linkedin: "https://www.linkedin.com/in/kartik-ghansela-a9bb41332/",
@@ -200,7 +200,7 @@ const team: {
     name: "Nikhil",
     roles: ["Video Editor", "Social Media"],
     image: Nikhil,
-    intro: "Editing life frame by frame",
+    intro: "Editing life frame by frame.",
     urls: {
       github: "https://github.com/nikkhil-05",
       linkedin: "https://www.linkedin.com/in/nikhil-kumar-engg",
