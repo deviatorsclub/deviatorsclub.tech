@@ -16,7 +16,6 @@ const categories = [
   "Web Development",
   "AI/ML",
   "Cyber Security",
-  "Web3",
   "DSA",
   "Social Media",
   "Event Management",

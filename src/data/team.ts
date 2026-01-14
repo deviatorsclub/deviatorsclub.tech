@@ -1,6 +1,5 @@
 import Yukta from "@/assets/team/Yukta.webp";
 import Anup from "@/assets/team/Anup.webp";
-import Shaarvy from "@/assets/team/Shaarvy.webp";
 import Daksh from "@/assets/team/Daksh.webp";
 import Aayush from "@/assets/team/Aayush.webp";
 import Arpita from "@/assets/team/Arpita.webp";
@@ -159,18 +158,6 @@ const team: {
     },
     image: Isha,
     keywords: ["Co Lead", "AI/ML"],
-  },
-  {
-    name: "Shaarvy",
-    roles: ["Lead", "Web3"],
-    intro: "I write novels with better logic than my code.",
-    urls: {
-      github: "https://github.com/Shaarvy",
-      linkedin: "https://www.linkedin.com/in/shaarvy-chauhan-07126827b/",
-      portfolio: "https://shaarvyportfolio.vercel.app/",
-    },
-    image: Shaarvy,
-    keywords: ["Lead", "Web3"],
   },
   {
     name: "Bhavya Kataria",
