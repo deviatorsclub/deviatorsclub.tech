@@ -62,6 +62,7 @@ const team: {
       github: "https://github.com/Vidushi2709",
       linkedin: "https://www.linkedin.com/in/vidushii-anand/",
       twitter: "https://x.com/idkwhyvi62159",
+      portfolio: "https://vinspace.live",
     },
     image: Vidushi,
     keywords: ["President"],
@@ -166,7 +167,8 @@ const team: {
     urls: {
       github: "https://www.github.com/damnbhavya",
       linkedin: "https://www.linkedin.com/in/katariabhavya",
-      twitter: "https://x.com/damnbhavya",
+      twitter: "https://x.com/dizzywebhead",
+      portfolio: "https://bhavya.page",
     },
     image: Bhavya,
     keywords: ["Lead", "Social Media", "Designer"],
