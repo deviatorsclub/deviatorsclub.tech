@@ -1,22 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
-/* Custom utility for neon text shadow */
-@layer utilities {
-  .text-shadow-neon {
-    text-shadow: 0 0 10px rgba(0, 255, 245, 0.7);
+/* ── Smooth scrolling ── */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* ── Hide scrollbars globally ── */
+@layer base {
+  html,
+  body,
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
-
-  /* Utility for proper mobile viewport handling */
-  .mobile-vh-fix {
-    height: 100vh;
-    height: 100dvh;
-    min-height: -webkit-fill-available;
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 }
 
-/* Animation keyframes for floating, spinning, and pulsing effects */
+/* ── Custom utilities ── */
+@utility mobile-vh-fix {
+  height: 100vh;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+
+@utility glass-card-active {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  background-color: hsl(var(--brand));
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: hsl(var(--brand));
+    color: hsl(var(--brand-light));
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+}
+
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: white;
+  }
+}
+
+/* ── Animation keyframes ── */
 @keyframes float-slow {
   0%,
   100% {
@@ -81,6 +154,7 @@
   }
 }
 
+/* ── Global resets ── */
 html,
 body {
   margin: 0;
@@ -89,29 +163,22 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   scroll-behavior: smooth;
-  /* Only set background on html as ultimate fallback */
 }
 
-/* Fix for mobile viewport height changes when address bar shows/hides */
 html {
   height: -webkit-fill-available;
-  /* Prevent white flash during initial load - only on html */
-  background: #000000;
+  background: hsl(var(--surface));
 }
 
 body {
   height: -webkit-fill-available;
-  /* Additional mobile-specific height fixes */
   min-height: -webkit-fill-available;
-  /* Remove black background from body to let animated background show */
 }
 
-/* Prevent white background flashes on any element */
 * {
   box-sizing: border-box;
 }
 
-/* Additional mobile safari fixes */
 @supports (-webkit-touch-callout: none) {
   html {
     height: -webkit-fill-available;
@@ -122,37 +189,20 @@ body {
   }
 }
 
-/* Light and dark theme CSS variables */
+/* ── Design tokens (dark-only site) ── */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
+    /* Brand palette */
+    --brand: 213 100% 33%;
+    --brand-dark: 210 100% 20%;
+    --brand-light: 215 100% 81%;
 
-  .dark {
+    /* Surfaces */
+    --surface: 0 0% 4%;
+    --surface-card: 0 0% 100% / 0.05;
+    --surface-elevated: 0 0% 100% / 0.1;
+
+    /* shadcn tokens (dark theme) */
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -177,17 +227,27 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
   }
 }
 
 @layer base {
-  /* Global border and background/text color application */
   * {
     @apply border-border;
   }
 
   body {
-    @apply text-foreground;
-    /* Remove bg-background to let animated background show through */
+    @apply font-outfit text-foreground;
   }
+}
+
+/* Headings use Unbounded — max weight (900) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 900;
 }

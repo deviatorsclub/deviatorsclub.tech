@@ -1,10 +1,9 @@
-import Link from "next/link";
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import events from "@/data/event";
 import { notFound } from "next/navigation";
 
 import "photoswipe/dist/photoswipe.css";
 import ImageGallery from "@/components/Image";
+import BackButton from "@/components/BackButton";
 
 interface PageParams {
   eventSlug: string;
@@ -23,26 +22,26 @@ export default async function Page({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen px-4 py-12 pt-20 text-white sm:px-6 lg:px-8 lg:pt-24">
-      <div className="mx-auto max-w-7xl">
-        <Link
-          href="/gallery"
-          className="mb-8 inline-flex items-center text-white"
-        >
-          <ChevronLeftIcon className="mr-2 h-5 w-5" />
-          Back to Gallery
-        </Link>
-        <h1 className="mb-4 bg-white bg-clip-text font-pixelify text-4xl font-bold text-transparent sm:text-5xl lg:text-6xl">
-          {event.title}
-        </h1>
-        <p className="mb-2 text-xl text-gray-300">{event.caption}</p>
-        <p className="mb-8 text-gray-400">
-          {event.date.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
+    <div className="min-h-screen w-full text-white">
+      <div className="mx-auto max-w-7xl px-5 pt-32 pb-20 sm:px-8 sm:pt-36 lg:pt-40">
+        <BackButton href="/gallery" label="All Events" />
+
+        <div className="mb-10 sm:mb-12">
+          <h1 className="text-3xl text-white sm:text-4xl lg:text-5xl">
+            {event.title}
+          </h1>
+          <p className="mt-3 text-sm text-white/50 sm:text-base">
+            {event.caption}
+          </p>
+          <p className="mt-1 text-xs text-white/25 sm:text-sm">
+            {event.date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
+        </div>
+
         <ImageGallery images={event.images} />
       </div>
     </div>

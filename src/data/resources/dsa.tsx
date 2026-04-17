@@ -1,6 +1,8 @@
+import React from "react";
+
 export const dsaRoadmapData: {
   category: string;
-  desc: string | JSX.Element;
+  desc: string | React.ReactNode;
   items: {
     title: string;
     link?: string;

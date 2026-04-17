@@ -77,17 +77,15 @@ const AnimatedBackground = memo(
         }}
       >
         {/* Base gradient background - always visible to prevent white flash */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-
-        {/* Static grid overlay - always visible */}
+        <div className="absolute inset-0 bg-[#050508]" />
         <div
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
-          `,
-            backgroundSize: "50px 50px",
+            background: `
+              radial-gradient(ellipse 80% 60% at 50% 0%, hsla(213, 100%, 33%, 0.07) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, hsla(213, 100%, 33%, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 70% 40% at 10% 60%, hsla(213, 100%, 33%, 0.03) 0%, transparent 50%)
+            `,
           }}
         />
 
@@ -99,11 +97,15 @@ const AnimatedBackground = memo(
               {LARGE_PARTICLES.map((particle) => (
                 <div
                   key={particle.id}
-                  className="absolute h-1 w-1 rounded-full bg-blue-400 opacity-60"
+                  className="absolute h-1 w-1 rounded-full opacity-30"
                   style={{
+                    backgroundColor: "hsl(213, 100%, 60%)",
                     left: `${particle.left}%`,
                     top: `${particle.top}%`,
-                    animation: `float-slow ${particle.animationDuration}s ease-in-out infinite`,
+                    animationName: "float-slow",
+                    animationDuration: `${particle.animationDuration}s`,
+                    animationTimingFunction: "ease-in-out",
+                    animationIterationCount: "infinite",
                     animationDelay: `${particle.animationDelay}s`,
                   }}
                 />
@@ -111,11 +113,15 @@ const AnimatedBackground = memo(
               {SMALL_PARTICLES.map((particle) => (
                 <div
                   key={`small-${particle.id}`}
-                  className="absolute h-0.5 w-0.5 rounded-full bg-blue-300 opacity-40"
+                  className="absolute h-0.5 w-0.5 rounded-full opacity-20"
                   style={{
+                    backgroundColor: "hsl(215, 100%, 70%)",
                     left: `${particle.left}%`,
                     top: `${particle.top}%`,
-                    animation: `float-fast ${particle.animationDuration}s ease-in-out infinite`,
+                    animationName: "float-fast",
+                    animationDuration: `${particle.animationDuration}s`,
+                    animationTimingFunction: "ease-in-out",
+                    animationIterationCount: "infinite",
                     animationDelay: `${particle.animationDelay}s`,
                   }}
                 />
@@ -127,13 +133,18 @@ const AnimatedBackground = memo(
               {SHAPES.map((shape) => (
                 <div
                   key={`shape-${shape.id}`}
-                  className="absolute border border-blue-500/20"
+                  className="absolute opacity-10"
                   style={{
+                    borderWidth: "1px",
+                    borderColor: "hsl(213, 100%, 33%)",
                     left: `${shape.left}%`,
                     top: `${shape.top}%`,
                     width: `${shape.width}px`,
                     height: `${shape.height}px`,
-                    animation: `spin-slow ${shape.animationDuration}s linear infinite`,
+                    animationName: "spin-slow",
+                    animationDuration: `${shape.animationDuration}s`,
+                    animationTimingFunction: "linear",
+                    animationIterationCount: "infinite",
                     animationDelay: `${shape.animationDelay}s`,
                     transform: `rotate(${shape.rotation}deg)`,
                   }}
@@ -141,16 +152,56 @@ const AnimatedBackground = memo(
               ))}
             </div>
 
-            {/* Subtle glow effects */}
+            {/* Subtle glow effects — larger, dimmer for smooth ambient feel */}
             <div
-              className="bg-blue-500/3 absolute left-1/4 top-1/4 h-80 w-80 rounded-full blur-3xl"
-              style={{ animation: "pulse-slow 8s ease-in-out infinite" }}
+              className="absolute rounded-full"
+              style={{
+                left: "15%",
+                top: "10%",
+                width: "500px",
+                height: "500px",
+                background:
+                  "radial-gradient(circle, hsla(213, 100%, 33%, 0.06) 0%, transparent 70%)",
+                filter: "blur(60px)",
+                animationName: "pulse-slow",
+                animationDuration: "10s",
+                animationTimingFunction: "ease-in-out",
+                animationIterationCount: "infinite",
+              }}
             />
             <div
-              className="bg-blue-500/2 absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full blur-3xl"
+              className="absolute rounded-full"
               style={{
-                animation: "pulse-slow 8s ease-in-out infinite",
-                animationDelay: "4s",
+                right: "10%",
+                bottom: "15%",
+                width: "600px",
+                height: "600px",
+                background:
+                  "radial-gradient(circle, hsla(213, 100%, 33%, 0.05) 0%, transparent 70%)",
+                filter: "blur(80px)",
+                animationName: "pulse-slow",
+                animationDuration: "12s",
+                animationTimingFunction: "ease-in-out",
+                animationIterationCount: "infinite",
+                animationDelay: "5s",
+              }}
+            />
+            <div
+              className="absolute rounded-full"
+              style={{
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "800px",
+                height: "400px",
+                background:
+                  "radial-gradient(ellipse, hsla(213, 100%, 33%, 0.04) 0%, transparent 70%)",
+                filter: "blur(100px)",
+                animationName: "pulse-slow",
+                animationDuration: "14s",
+                animationTimingFunction: "ease-in-out",
+                animationIterationCount: "infinite",
+                animationDelay: "3s",
               }}
             />
           </>

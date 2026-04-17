@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { motion } from "motion/react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Link01Icon } from "@hugeicons/core-free-icons";
 
 import { cyberResources } from "@/data/resources/cyber";
 import Link from "next/link";
@@ -14,13 +15,13 @@ export default function CyberResources() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.1 }}
-          className="rounded-lg bg-[#0047AB]/30 p-4"
+          className="bg-brand/30 rounded-lg p-4"
         >
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-xl font-semibold text-white">
+              <p className="text-xl font-semibold text-white">
                 {resource.title}
-              </h3>
+              </p>
               <p className="text-white/80">{resource.type}</p>
             </div>
             <Link
@@ -30,7 +31,7 @@ export default function CyberResources() {
               className="flex items-center space-x-2 text-white hover:text-white"
             >
               <span>Visit</span>
-              <ExternalLink className="h-5 w-5" />
+              <HugeiconsIcon icon={Link01Icon} size={20} />
             </Link>
           </div>
           {resource.overview && (

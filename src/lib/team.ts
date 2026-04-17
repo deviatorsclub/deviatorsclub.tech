@@ -1,5 +1,4 @@
-/* eslint-disable */
-import team from "@/data/team";
+import team from "@/data/team02";
 
 import {
   TeamMember,

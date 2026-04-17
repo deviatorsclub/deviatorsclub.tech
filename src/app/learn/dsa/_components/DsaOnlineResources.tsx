@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { motion } from "motion/react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 
 import { codingPlatforms, dsaResources } from "@/data/resources/dsa";
 
@@ -15,22 +16,26 @@ export default function DsaOnlineResources() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: idx * 0.1 }}
-          className="flex items-center space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
+          className="bg-brand/30 flex items-center space-x-3 rounded-lg p-3"
         >
-          <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
+          <HugeiconsIcon
+            icon={ArrowRight01Icon}
+            size={20}
+            className="mt-1 flex-shrink-0 text-white"
+          />
           <div>
-            <h3 className="font-semibold text-white underline">
+            <p className="font-semibold text-white underline">
               {category.title}
-            </h3>
+            </p>
           </div>
         </motion.a>
       ))}
 
-      <h2>
+      <p>
         <span className="text-xl font-semibold text-white">
           Coding Platforms
         </span>
-      </h2>
+      </p>
       {codingPlatforms.map((category, idx) => (
         <motion.a
           key={idx}
@@ -39,13 +44,17 @@ export default function DsaOnlineResources() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: idx * 0.1 }}
-          className="flex items-center space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
+          className="bg-brand/30 flex items-center space-x-3 rounded-lg p-3"
         >
-          <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
+          <HugeiconsIcon
+            icon={ArrowRight01Icon}
+            size={20}
+            className="mt-1 flex-shrink-0 text-white"
+          />
           <div>
-            <h3 className="font-semibold text-white underline">
+            <p className="font-semibold text-white underline">
               {category.title}
-            </h3>
+            </p>
           </div>
         </motion.a>
       ))}

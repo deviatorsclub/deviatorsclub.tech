@@ -1,20 +1,20 @@
-import Yukta from "@/assets/team/Yukta.webp";
-import Anup from "@/assets/team/Anup.webp";
-import Daksh from "@/assets/team/Daksh.webp";
-import Aayush from "@/assets/team/Aayush.webp";
-import Arpita from "@/assets/team/Arpita.webp";
-import Risha from "@/assets/team/Risha.webp";
-import Vidushi from "@/assets/team/Vidushi.webp";
-import Isha from "@/assets/team/Isha.webp";
-import Kunal from "@/assets/team/Kunal.webp";
-import Tanmay from "@/assets/team/Tanmay.webp";
-import Pooja from "@/assets/team/Pooja.webp";
-import Riya from "@/assets/team/Riya.webp";
-import Bhavya from "@/assets/team/Bhavya.webp";
-import Radhika from "@/assets/team/Radhika.webp";
-import SukratiMam from "@/assets/team/SukratiMam.webp";
-import Nikhil from "@/assets/team/Nikhil.webp";
-import Kartik from "@/assets/team/Kartik.webp";
+import Yukta from "@/assets/team02/Yukta.webp";
+import Anup from "@/assets/team02/Anup.webp";
+import Daksh from "@/assets/team02/Daksh.webp";
+import Aayush from "@/assets/team02/Aayush.webp";
+import Arpita from "@/assets/team02/Arpita.webp";
+import Risha from "@/assets/team02/Risha.webp";
+import Vidushi from "@/assets/team02/Vidushi.webp";
+import Isha from "@/assets/team02/Isha.webp";
+import Kunal from "@/assets/team02/Kunal.webp";
+import Tanmay from "@/assets/team02/Tanmay.webp";
+import Pooja from "@/assets/team02/Pooja.webp";
+import Riya from "@/assets/team02/Riya.webp";
+import Bhavya from "@/assets/team02/Bhavya.webp";
+import Radhika from "@/assets/team02/Radhika.webp";
+import SukratiMam from "@/assets/team02/SukratiMam.webp";
+import Nikhil from "@/assets/team02/Nikhil.webp";
+import Kartik from "@/assets/team02/Kartik.webp";
 import { StaticImageData } from "next/image";
 
 const team: {
@@ -76,7 +76,7 @@ const team: {
       linkedin: "https://www.linkedin.com/in/kunal-verma06",
     },
     image: Kunal,
-    keywords: ["Lead", "Web Development"],
+    keywords: ["Web Development"],
   },
   {
     name: "Radhika Khatter",
@@ -88,7 +88,7 @@ const team: {
       twitter: "https://x.com/Radhika_Khatter",
     },
     image: Radhika,
-    keywords: ["Co Lead", "Web Development"],
+    keywords: ["Web Development"],
   },
   {
     name: "Tanmay Verma",
@@ -99,7 +99,7 @@ const team: {
       linkedin: "https://www.linkedin.com/in/tanmayverma190605",
     },
     image: Tanmay,
-    keywords: ["Lead", "Cyber Security", "Blockchain"],
+    keywords: ["Cyber Security"],
   },
   {
     name: "Risha ",
@@ -110,7 +110,7 @@ const team: {
       linkedin: "https://www.linkedin.com/in/risha-batra-47186a289/",
     },
     image: Risha,
-    keywords: ["Co Lead", "Cyber Security"],
+    keywords: ["Cyber Security"],
   },
   {
     name: "Anup Pandey",
@@ -123,7 +123,7 @@ const team: {
       leetcode: "https://leetcode.com/u/Anup_Kumar_Pandey/",
     },
     image: Anup,
-    keywords: ["Lead", "DSA"],
+    keywords: ["DSA"],
   },
   {
     name: "Arpita",
@@ -135,7 +135,7 @@ const team: {
       leetcode: "https://leetcode.com/u/arpitakukreja18/",
     },
     image: Arpita,
-    keywords: ["Co Lead", "DSA"],
+    keywords: ["DSA"],
   },
   {
     name: "Kartik",
@@ -146,7 +146,7 @@ const team: {
       linkedin: "https://www.linkedin.com/in/kartik-ghansela-a9bb41332/",
     },
     image: Kartik,
-    keywords: ["Lead", "AI/ML"],
+    keywords: ["AI/ML"],
   },
   {
     name: "Isha Nayal",
@@ -158,7 +158,7 @@ const team: {
       portfolio: "https://final-portfolio-74ea.vercel.app/#projects",
     },
     image: Isha,
-    keywords: ["Co Lead", "AI/ML"],
+    keywords: ["AI/ML"],
   },
   {
     name: "Bhavya Kataria",
@@ -171,7 +171,7 @@ const team: {
       portfolio: "https://bhavya.page",
     },
     image: Bhavya,
-    keywords: ["Lead", "Social Media", "Designer"],
+    keywords: ["Social Media", "Designer"],
   },
   {
     name: "Riya Sangwan",
@@ -183,18 +183,18 @@ const team: {
       linkedin: "https://www.linkedin.com/in/riya-sangwan-3a1363324",
       portfolio: "https://sangwanriya.netlify.app/",
     },
-    keywords: ["Co Lead", "Social Media"],
+    keywords: ["Social Media"],
   },
   {
     name: "Nikhil",
-    roles: ["Video Editor", "Social Media"],
+    roles: ["Co Lead", "Video Editor", "Social Media"],
     image: Nikhil,
     intro: "Editing life frame by frame.",
     urls: {
       github: "https://github.com/nikkhil-05",
       linkedin: "https://www.linkedin.com/in/nikhil-kumar-engg",
     },
-    keywords: ["Video Editor", "Social Media"],
+    keywords: ["Social Media"],
   },
   {
     name: "Yukta Khatter ",
@@ -205,7 +205,7 @@ const team: {
       linkedin: "https://www.linkedin.com/in/yukta-khatter-ba70102b5",
     },
     image: Yukta,
-    keywords: ["Lead", "Event Management"],
+    keywords: ["Event Management"],
   },
   {
     name: "Daksh Sharma",

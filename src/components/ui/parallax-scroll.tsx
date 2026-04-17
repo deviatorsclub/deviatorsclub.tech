@@ -1,8 +1,8 @@
 "use client";
 
-import { MotionValue, useScroll, useTransform } from "framer-motion";
+import { MotionValue, useScroll, useTransform } from "motion/react";
 import { useRef, memo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ALLIMAGESDATA } from "@/types/event";
@@ -22,7 +22,7 @@ export const ParallaxScroll = memo(
         className={`h-auto w-full items-start overflow-y-auto ${className}`}
         ref={gridRef}
       >
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-20 sm:grid-cols-2 sm:px-6 sm:py-24 md:grid-cols-3 lg:grid-cols-3 lg:px-8">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
           {images.map(({ image: el, title, slug }, idx) => (
             <RenderImage
               el={el}
@@ -56,11 +56,11 @@ const RenderImage = memo(
       <Link href={"/gallery/" + slug}>
         <motion.div
           style={{ y: translateY }}
-          className="group relative overflow-hidden rounded-lg"
+          className="group relative overflow-hidden rounded-2xl border border-white/[0.06] will-change-transform"
         >
           <Image
             src={el.src}
-            className="transition-scale h-80 w-full object-cover duration-300 group-hover:scale-110"
+            className="aspect-[4/3] w-full transform-gpu object-cover transition-transform duration-300 ease-out group-hover:scale-105"
             height={400}
             width={400}
             alt={title}
@@ -68,13 +68,10 @@ const RenderImage = memo(
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx4f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R2rD5wcZooa5wXVeTb4YmFyjqq6zzTBXHEBp5JCWKFAOW7DVKX0aNTTDqf00EQM4kqEeYJ2mGOV4CmmHKhQRNE6nCNGAMb4K/PKUVHQ=="
           />
-          <div className="absolute inset-0 flex items-end justify-start p-4 opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
-            <div className="relative">
-              <div className="absolute inset-0 -m-2 rounded-xl border border-white/10 bg-black/40 shadow-lg backdrop-blur-md"></div>
-              <h3 className="relative text-lg font-semibold text-white drop-shadow-sm">
-                {title}
-              </h3>
-            </div>
+          <div className="absolute inset-x-0 bottom-0 p-3">
+            <p className="glass-card-active inline-block rounded-xl px-3 py-1.5 text-base font-medium text-white sm:text-lg">
+              {title}
+            </p>
           </div>
         </motion.div>
       </Link>

@@ -4,8 +4,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Youtube } from "lucide-react";
-import { motion } from "framer-motion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { YoutubeIcon } from "@hugeicons/core-free-icons";
+import { motion } from "motion/react";
 import { CssResources } from "@/data/resources/web";
 
 export default function Css() {
@@ -17,9 +18,9 @@ export default function Css() {
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="resources">
         <AccordionTrigger>
-          <h2 className="text-lg font-semibold text-white md:text-xl">
+          <p className="text-lg font-semibold text-white md:text-xl">
             Learning Resources
-          </h2>
+          </p>
         </AccordionTrigger>
         <AccordionContent>
           <ul className="space-y-4">
@@ -30,7 +31,7 @@ export default function Css() {
                 initial="hidden"
                 animate="visible"
                 transition={{ delay: index * 0.1 }}
-                className="rounded-lg bg-[#0047AB]/30 p-3"
+                className="bg-brand/30 rounded-lg p-3"
               >
                 <a
                   href={resource.url}
@@ -38,14 +39,18 @@ export default function Css() {
                   rel="noopener noreferrer"
                   className="flex items-center text-white hover:underline"
                 >
-                  <Youtube className="mr-2 h-4 w-4" />
+                  <HugeiconsIcon
+                    icon={YoutubeIcon}
+                    size={16}
+                    className="mr-2"
+                  />
                   {resource.title}
                 </a>
               </motion.li>
             ))}
           </ul>
           <div className="mt-4">
-            <h4 className="mb-2 text-lg font-semibold">CSS Playlist</h4>
+            <p className="mb-2 text-lg font-semibold">CSS Playlist</p>
             <iframe
               width="100%"
               height="315"
@@ -61,9 +66,9 @@ export default function Css() {
       </AccordionItem>
       <AccordionItem value="projects">
         <AccordionTrigger>
-          <h2 className="text-lg font-semibold text-white md:text-xl">
+          <p className="text-lg font-semibold text-white md:text-xl">
             Projects to Test Your Skills
-          </h2>
+          </p>
         </AccordionTrigger>
         <AccordionContent>
           <motion.ol className="space-y-4">
@@ -74,9 +79,9 @@ export default function Css() {
                 initial="hidden"
                 animate="visible"
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
+                className="bg-brand/30 flex items-center space-x-3 rounded-lg p-3"
               >
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#0047AB] font-bold text-white">
+                <span className="bg-brand flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full font-bold text-white">
                   {index + 1}
                 </span>
                 <span>{project}</span>

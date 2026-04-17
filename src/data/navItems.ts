@@ -1,16 +1,17 @@
-import { BookIcon, GalleryVerticalIcon } from "lucide-react";
 import {
-  EnvelopeIcon,
-  HomeIcon,
+  Home01Icon,
   UserIcon,
-  UsersIcon,
-} from "@heroicons/react/24/outline";
+  UserGroupIcon,
+  Book03Icon,
+  Image01Icon,
+  Mail01Icon,
+} from "@hugeicons/core-free-icons";
 
 const navItems = [
   {
     name: "Home",
     link: "/#home",
-    icon: HomeIcon,
+    icon: Home01Icon,
   },
   {
     name: "About",
@@ -20,22 +21,22 @@ const navItems = [
   {
     name: "Team",
     link: "/team",
-    icon: UsersIcon,
+    icon: UserGroupIcon,
   },
   {
     name: "Learn",
     link: "/learn",
-    icon: BookIcon,
+    icon: Book03Icon,
   },
   {
     name: "Gallery",
     link: "/gallery",
-    icon: GalleryVerticalIcon,
+    icon: Image01Icon,
   },
   {
     name: "Contact",
     link: "/#contact",
-    icon: EnvelopeIcon,
+    icon: Mail01Icon,
   },
 ];
 

@@ -11,15 +11,15 @@ export default function ImageGallery({
 }) {
   return (
     <Gallery>
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative h-auto w-[97vw] overflow-hidden rounded-lg sm:h-[300px] sm:w-[300px] lg:h-[350px] lg:w-[350px] 2xl:h-[400px] 2xl:w-[400px]"
+            className="group relative aspect-square overflow-hidden rounded-2xl border border-white/[0.06] will-change-transform"
           >
             <ImageZoom
               src={image}
-              className="border-20 aspect-square h-full w-full scale-110 cursor-pointer object-cover transition-transform hover:scale-100"
+              className="h-full w-full transform-gpu cursor-pointer object-cover transition-transform duration-300 ease-out group-hover:scale-105"
             />
           </div>
         ))}

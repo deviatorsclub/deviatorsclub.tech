@@ -3,8 +3,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Navbar from "@/components/Navbar";
-import localFont from "next/font/local";
-import { Quicksand } from "next/font/google";
+import { Outfit, Unbounded } from "next/font/google";
 import { metaDataBase } from "@/data/metaData";
 import {
   organizationStructuredData,
@@ -13,24 +12,23 @@ import {
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-// Local Pixelify font configuration for headings and highlights
-const pixelifySans = localFont({
-  src: "../../public/fonts/Pixelify.ttf",
-  display: "swap",
-  fallback: ["cursive", "Arial", "sans-serif"],
-  preload: true,
-  variable: "--font-pixelify",
-  weight: "400",
-});
-
-// Quicksand font for body text
-const quicksand = Quicksand({
-  weight: ["400", "500", "700"],
+// Outfit — body text (variable, 100–900)
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   fallback: ["system-ui", "Arial", "sans-serif"],
   preload: true,
-  variable: "--font-quicksand",
+  variable: "--font-outfit",
+  adjustFontFallback: false,
+});
+
+// Unbounded — headings (variable, weight 200–900)
+const unbounded = Unbounded({
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  preload: true,
+  variable: "--font-heading",
   adjustFontFallback: false,
 });
 
@@ -46,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pixelifySans.variable} ${quicksand.variable}`}
+      className={`${outfit.variable} ${unbounded.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -75,7 +73,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${quicksand.className} min-h-screen antialiased`}>
+      <body className="min-h-screen antialiased">
         {/* Animated background and navigation */}
         <AnimatedBackground />
         <Navbar />

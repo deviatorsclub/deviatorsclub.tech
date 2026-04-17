@@ -2,29 +2,29 @@ import events from "@/data/event";
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
 import { Metadata } from "next";
 import { metaDataBase } from "@/data/metaData";
-// import ClientBackground3D from "@/components/3D/ClientBackground3D";
 
 export default function GalleryPage() {
   return (
-    <>
-      {/* 3D Background */}
-      {/* <ClientBackground3D /> */}
-
-      <section className="relative px-4 py-12 pt-20 text-white sm:px-6 lg:px-8 lg:pt-24">
-        <div className="mx-auto max-w-7xl">
-          <h1 className="mb-8 bg-white bg-clip-text text-center font-pixelify text-4xl font-bold text-transparent sm:text-5xl lg:text-6xl">
+    <div className="min-h-screen w-full text-white">
+      <div className="mx-auto max-w-7xl px-5 pt-32 pb-20 sm:px-8 sm:pt-36 lg:pt-40">
+        <div className="mb-10 text-center sm:mb-12">
+          <h1 className="text-3xl text-white sm:text-4xl lg:text-5xl">
             Event Gallery
           </h1>
-          <ParallaxScroll
-            images={events.map((event) => ({
-              image: event.images[event.index],
-              title: event.title,
-              slug: event.slug,
-            }))}
-          />
+          <p className="mx-auto mt-4 max-w-xl text-sm text-white/40 sm:text-base">
+            Relive the highlights from our workshops, hackathons, and community
+            meetups.
+          </p>
         </div>
-      </section>
-    </>
+        <ParallaxScroll
+          images={events.map((event) => ({
+            image: event.images[event.index],
+            title: event.title,
+            slug: event.slug,
+          }))}
+        />
+      </div>
+    </div>
   );
 }
 

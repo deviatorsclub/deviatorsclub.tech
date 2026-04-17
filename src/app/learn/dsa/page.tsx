@@ -1,19 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FileCode } from "lucide-react";
-import "photoswipe/dist/photoswipe.css";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { SourceCodeIcon } from "@hugeicons/core-free-icons";
+import { motion } from "motion/react";
+
 import DsaRoadmap from "./_components/DsaRoadmap";
 import DisplayTeam from "@/components/DisplayTeam";
+import BackButton from "@/components/BackButton";
 import DsaOnlineResources from "./_components/DsaOnlineResources";
 
 const DsaResources = () => {
@@ -27,104 +21,75 @@ const DsaResources = () => {
     }
   }, []);
 
-  const tabVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  const fadeInUpVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <div className="min-h-screen w-full text-white">
-      <div className="container mx-auto px-4 py-16 sm:py-24">
+      <div className="mx-auto max-w-5xl px-5 pt-32 pb-20 sm:px-8 sm:pt-36 lg:pt-40">
+        <BackButton href="/learn" label="All Tracks" />
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 space-y-4 text-balance"
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center text-balance sm:mb-12"
         >
-          <h1
-            className="bg-white bg-clip-text text-center font-pixelify text-4xl font-bold text-transparent md:text-6xl lg:text-7xl"
-            style={{
-              textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
-            }}
-          >
-            Data Structures and Algorithms Resources
+          <h1 className="text-3xl text-white sm:text-4xl lg:text-5xl">
+            Data Structures & Algorithms
           </h1>
-          <p className="mx-auto max-w-2xl text-center text-lg text-gray-200">
+          <p className="mx-auto mt-4 max-w-xl text-sm text-white/40 sm:text-base">
             Learn the basics of data structures and algorithms, and find
             resources to help you practice and improve your problem-solving
           </p>
-          <p className="text-md mx-auto max-w-2xl text-center text-gray-400">
-            Note: Data Structures and Algorithms are essential for technical
-            interviews and coding challenges.
+          <p className="mx-auto mt-2 max-w-xl text-xs text-white/25 sm:text-sm">
+            Note: Essential for technical interviews and coding challenges.
           </p>
         </motion.div>
 
-        <Tabs
-          value={selectedTab}
-          onValueChange={(e) => {
-            setSelectedTab(e);
-            localStorage.setItem("dsaSelectedTab", e);
-          }}
-          className="space-y-8"
-        >
-          <div className="h-20 md:h-24 lg:h-auto">
-            <TabsList className="mb-10 flex flex-wrap justify-center gap-2 bg-transparent p-1 text-gray-300 sm:gap-4 lg:mb-0">
-              {tabs.map((tab, index) => (
-                <TabsTrigger
-                  key={index}
-                  value={tab.key}
-                  className="rounded-full px-4 py-2 text-sm data-[state=active]:bg-[#0047AB] sm:px-5 sm:py-2 sm:text-base"
-                >
-                  <tab.icon className="mr-2 h-4 w-4 sm:mr-3 sm:h-5 sm:w-5" />
-                  {tab.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </div>
+        {/* Tab pills */}
+        <div className="mb-8 flex flex-wrap justify-center gap-2 sm:mb-10">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => {
+                setSelectedTab(tab.key);
+                localStorage.setItem("dsaSelectedTab", tab.key);
+              }}
+              className={`flex items-center gap-2 rounded-2xl px-3.5 py-1.5 text-xs font-medium transition-all duration-200 sm:px-4 sm:py-2 sm:text-sm ${
+                selectedTab === tab.key
+                  ? "bg-brand text-white"
+                  : "glass-card text-white/50 hover:text-white/80"
+              }`}
+            >
+              <HugeiconsIcon icon={tab.icon} size={16} />
+              {tab.name}
+            </button>
+          ))}
+        </div>
 
-          <motion.div
-            key={selectedTab}
-            variants={tabVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {tabs.map((tab, index) => (
-              <TabsContent key={index} value={tab.key} className="space-y-4">
-                <Card className="border-[#0047AB] bg-white/5 transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle
-                      className="font-pixelify text-3xl text-white"
-                      style={{
-                        textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
-                      }}
-                    >
-                      {tab.title}
-                    </CardTitle>
-                    <CardDescription className="text-gray-400">
-                      {tab.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>{tab.content && <tab.content />}</CardContent>
-                </Card>
-              </TabsContent>
-            ))}
-          </motion.div>
-        </Tabs>
+        {/* Tab content */}
+        {tabs.map((tab) =>
+          selectedTab === tab.key ? (
+            <motion.div
+              key={tab.key}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="glass-card rounded-2xl p-5 sm:p-6">
+                <h2 className="text-xl text-white sm:text-2xl">{tab.title}</h2>
+                <p className="mt-1.5 text-sm text-white/35">
+                  {tab.description}
+                </p>
+                <div className="mt-6">{tab.content && <tab.content />}</div>
+              </div>
+            </motion.div>
+          ) : null,
+        )}
 
         <motion.div
-          variants={fadeInUpVariants}
-          initial="hidden"
-          animate="visible"
-          className="mt-8 text-center text-sm text-gray-400"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-12"
         >
-          <p className="mb-4 text-lg text-gray-300">
-            For further assistance, contact the Deviators DSA team:
-          </p>
           <DisplayTeam keyword="DSA" />
         </motion.div>
       </div>
@@ -140,7 +105,7 @@ const tabs = [
     description:
       "A comprehensive roadmap to master Data Structures and Algorithms.",
     content: DsaRoadmap,
-    icon: FileCode,
+    icon: SourceCodeIcon,
   },
   {
     key: "resourcesa",
@@ -149,7 +114,7 @@ const tabs = [
     description:
       "A collection of resources to help you learn and practice Data Structures and Algorithms.",
     content: DsaOnlineResources,
-    icon: FileCode,
+    icon: SourceCodeIcon,
   },
 ];
 

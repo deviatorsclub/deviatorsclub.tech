@@ -1,23 +1,23 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Code, FileCode, Globe, Laptop, Server } from "lucide-react";
-import "photoswipe/dist/photoswipe.css";
+  SourceCodeIcon,
+  CodeIcon,
+  LaptopIcon,
+  GlobeIcon,
+  ServerStackIcon,
+} from "@hugeicons/core-free-icons";
+import { motion } from "motion/react";
+
 import FullStack from "./_components/FullStack";
 import Html from "./_components/Html";
 import WebDevRoadmap from "./_components/WebDevRoadmap";
 import Css from "./_components/Css";
 import Javascript from "./_components/Javascript";
 import DisplayTeam from "@/components/DisplayTeam";
+import BackButton from "@/components/BackButton";
 
 const WebDevResources = () => {
   const [selectedTab, setSelectedTab] = useState("");
@@ -30,105 +30,76 @@ const WebDevResources = () => {
     }
   }, []);
 
-  const tabVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  const fadeInUpVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <div className="min-h-screen w-full text-white">
-      <div className="container mx-auto px-4 py-16 sm:py-24">
+      <div className="mx-auto max-w-5xl px-5 pt-32 pb-20 sm:px-8 sm:pt-36 lg:pt-40">
+        <BackButton href="/learn" label="All Tracks" />
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 space-y-4"
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center sm:mb-12"
         >
-          <h1
-            className="bg-white bg-clip-text text-center font-pixelify text-4xl font-bold text-transparent md:text-6xl lg:text-7xl"
-            style={{
-              textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
-            }}
-          >
+          <h1 className="text-3xl text-white sm:text-4xl lg:text-5xl">
             Web Development Resources
           </h1>
-          <p className="mx-auto max-w-2xl text-center text-lg text-gray-200">
+          <p className="mx-auto mt-4 max-w-xl text-sm text-white/40 sm:text-base">
             Comprehensive guide and resources for your web development journey
           </p>
-          <p className="text-md max-w-2.5xl mx-auto text-center text-gray-400">
-            Note: These resources primarily cover the MERN (MongoDB, Express.js,
-            React, Node.js) stack
+          <p className="mx-auto mt-2 max-w-xl text-xs text-white/25 sm:text-sm">
+            Note: These resources primarily cover the MERN stack
           </p>
         </motion.div>
 
-        <Tabs
-          value={selectedTab}
-          onValueChange={(e) => {
-            setSelectedTab(e);
-            localStorage.setItem("webSelectedTab", e);
-          }}
-          className="space-y-8"
-        >
-          <div className="h-20 md:h-24 lg:h-auto">
-            <TabsList className="mb-10 flex flex-wrap justify-center gap-2 bg-transparent p-1 text-gray-300 sm:gap-4 lg:mb-0">
-              {tabs.map((tab, index) => (
-                <TabsTrigger
-                  key={index}
-                  value={tab.key}
-                  className="rounded-full px-4 py-2 text-sm data-[state=active]:bg-[#0047AB] sm:px-5 sm:py-2 sm:text-base"
-                >
-                  <tab.icon className="mr-2 h-4 w-4 sm:mr-3 sm:h-5 sm:w-5" />
-                  {tab.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </div>
+        {/* Tab pills */}
+        <div className="mb-8 flex flex-wrap justify-center gap-2 sm:mb-10">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => {
+                setSelectedTab(tab.key);
+                localStorage.setItem("webSelectedTab", tab.key);
+              }}
+              className={`flex items-center gap-2 rounded-2xl px-3.5 py-1.5 text-xs font-medium transition-all duration-200 sm:px-4 sm:py-2 sm:text-sm ${
+                selectedTab === tab.key
+                  ? "bg-brand text-white"
+                  : "glass-card text-white/50 hover:text-white/80"
+              }`}
+            >
+              <HugeiconsIcon icon={tab.icon} size={16} />
+              {tab.name}
+            </button>
+          ))}
+        </div>
 
-          <motion.div
-            key={selectedTab}
-            variants={tabVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {tabs.map((tab, index) => (
-              <TabsContent key={index} value={tab.key} className="space-y-4">
-                <Card className="border-[#0047AB] bg-white/5 transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle
-                      className="font-pixelify text-3xl text-white"
-                      style={{
-                        textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
-                      }}
-                    >
-                      {tab.title}
-                    </CardTitle>
-                    <CardDescription className="text-gray-400">
-                      {tab.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <tab.content />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            ))}
-          </motion.div>
-        </Tabs>
+        {/* Tab content */}
+        {tabs.map((tab) =>
+          selectedTab === tab.key ? (
+            <motion.div
+              key={tab.key}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="glass-card rounded-2xl p-5 sm:p-6">
+                <h2 className="text-xl text-white sm:text-2xl">{tab.title}</h2>
+                <p className="mt-1.5 text-sm text-white/35">
+                  {tab.description}
+                </p>
+                <div className="mt-6">
+                  <tab.content />
+                </div>
+              </div>
+            </motion.div>
+          ) : null,
+        )}
 
         <motion.div
-          variants={fadeInUpVariants}
-          initial="hidden"
-          animate="visible"
-          className="mt-8 text-center text-sm text-gray-400"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-12"
         >
-          <p className="mb-4 text-lg text-gray-300">
-            For further assistance, contact the Deviators Web Development team:
-          </p>
           <DisplayTeam keyword="Web Development" />
         </motion.div>
       </div>
@@ -143,7 +114,7 @@ const tabs = [
     title: "Web Development Roadmap",
     description: "Follow this path to become a proficient web developer",
     content: WebDevRoadmap,
-    icon: FileCode,
+    icon: SourceCodeIcon,
   },
   {
     key: "html",
@@ -151,7 +122,7 @@ const tabs = [
     title: "HTML Resources",
     description: "Learn the basic layout and structure of web pages",
     content: Html,
-    icon: Code,
+    icon: CodeIcon,
   },
   {
     key: "css",
@@ -159,7 +130,7 @@ const tabs = [
     title: "CSS Resources",
     description: "Style your HTML pages and make them interactive",
     content: Css,
-    icon: Laptop,
+    icon: LaptopIcon,
   },
   {
     key: "javascript",
@@ -167,7 +138,7 @@ const tabs = [
     title: "JavaScript Resources",
     description: "Add functionality and interactivity to your web pages",
     content: Javascript,
-    icon: Globe,
+    icon: GlobeIcon,
   },
   {
     key: "Full Stack",
@@ -176,7 +147,7 @@ const tabs = [
     description:
       "Learn server-side programming with Node.js, Express.js, and React.js",
     content: FullStack,
-    icon: Server,
+    icon: ServerStackIcon,
   },
 ];
 

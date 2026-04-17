@@ -1,66 +1,61 @@
 import {
-  CodeBracketIcon,
-  BeakerIcon,
-  LightBulbIcon,
-  UsersIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
-  TrophyIcon,
+  SourceCodeIcon,
+  TestTube01Icon,
+  BulbIcon,
+  UserGroupIcon,
+  MessageMultiple01Icon,
+  Award01Icon,
   FireIcon,
-} from "@heroicons/react/24/outline";
+} from "@hugeicons/core-free-icons";
+
 export const activities = [
   {
-    icon: CodeBracketIcon,
+    icon: SourceCodeIcon,
     title: "Open Source Projects",
-    description: "Drive impactful contributions and lead innovative projects.",
-    color: "from-purple-500 to-blue-500",
+    description:
+      "We build real software that lives beyond the classroom. Contribute to active repos, ship features, and grow your portfolio with projects that matter.",
     stats: "500+ Contributors",
   },
   {
-    icon: BeakerIcon,
+    icon: TestTube01Icon,
     title: "Hackathons",
     description:
-      "Jump into the action with real-world challenges! Our hackathons are where creativity and coding collide. Build solutions with friends, get feedback from mentors, and learn at a breakneck speed. Ready to make your mark?",
-    color: "from-blue-500 to-cyan-500",
+      "Fast-paced, team-driven coding sprints where wild ideas become working prototypes. Compete, collaborate, and learn at breakneck speed.",
     stats: "24+ Events/Year",
   },
   {
-    icon: LightBulbIcon,
+    icon: BulbIcon,
     title: "Workshops",
     description:
-      "Join our weekly interactive workshops, where learning meets hands-on experience. Dive deep into real-world topics, collaborate, and sharpen your skills!",
-    color: "from-cyan-500 to-teal-500",
+      "Hands-on deep dives into real-world tech — from system design to frontend frameworks. Learn by doing, every single week.",
     stats: "Weekly Sessions",
   },
   {
-    icon: ChatBubbleOvalLeftEllipsisIcon,
+    icon: MessageMultiple01Icon,
     title: "Community Talks",
     description:
-      "Engage in lively discussions on tech trends and innovations. Share ideas, learn from peers, and stay ahead of the curve!",
-    color: "from-gray-500 to-purple-500",
+      "Bite-sized discussions on emerging tech, industry trends, and hot takes. Share perspectives, debate ideas, and stay ahead of the curve.",
     stats: "Bi-weekly Discussions",
   },
   {
+    icon: UserGroupIcon,
     title: "Community",
-    icon: UsersIcon,
     description:
-      "Join a dynamic network of tech enthusiasts, collaborate on projects, and grow together—because great things happen when minds connect",
-    color: "from-teal-500 to-green-500",
+      "A tight-knit network of curious minds who build, break, and learn together. Great things happen when the right people connect.",
     stats: "500+ Members",
   },
   {
-    icon: TrophyIcon,
+    icon: Award01Icon,
     title: "Achievements",
     description:
-      "From winning hackathons to launching open-source projects, we celebrate every win! Our achievements reflect our passion, hard work, and the milestones that make us proud as a community.",
-    color: "from-yellow-500 to-orange-500",
+      "Hackathon wins, open-source launches, and campus-wide impact. Every milestone reflects the passion this community runs on.",
     stats: "100+ Wins",
   },
   {
     icon: FireIcon,
-    title: "One Year Strong",
+    title: "Three Years Strong",
     description:
-      "One year, countless ideas! We've built, innovated, and grown together, celebrating every moment. Here's to even more tech magic and memories with a community that's here to stay!",
-    color: "from-red-500 to-pink-500",
-    stats: "1 Year and Counting",
+      "Three years of building, shipping, and growing together. What started as an idea is now a movement — and we're just getting started.",
+    stats: "3 Years and Counting",
   },
 ];

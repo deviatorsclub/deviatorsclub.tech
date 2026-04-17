@@ -5,8 +5,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FullStackResources } from "@/data/resources/web";
-import { Youtube } from "lucide-react";
-import { motion } from "framer-motion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { YoutubeIcon } from "@hugeicons/core-free-icons";
+import { motion } from "motion/react";
 
 export default function FullStack() {
   const listItemVariants = {
@@ -18,9 +19,9 @@ export default function FullStack() {
       {FullStackResources.map((resource, index) => (
         <AccordionItem key={index} value={resource.name}>
           <AccordionTrigger>
-            <h2 className="text-lg font-semibold text-white md:text-xl">
+            <p className="text-lg font-semibold text-white md:text-xl">
               {resource.name}
-            </h2>
+            </p>
           </AccordionTrigger>
           <AccordionContent>
             <p className="mb-2">{resource.desc}</p>
@@ -32,7 +33,7 @@ export default function FullStack() {
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: index * 0.1 }}
-                  className="rounded-lg bg-[#0047AB]/30 p-3"
+                  className="bg-brand/30 rounded-lg p-3"
                 >
                   <a
                     href={item.url}
@@ -40,16 +41,20 @@ export default function FullStack() {
                     rel="noopener noreferrer"
                     className="flex items-center text-white hover:underline"
                   >
-                    <Youtube className="mr-2 h-4 w-4" />
+                    <HugeiconsIcon
+                      icon={YoutubeIcon}
+                      size={16}
+                      className="mr-2"
+                    />
                     {item.title}
                   </a>
                 </motion.li>
               ))}
             </ul>
             <div className="mt-4">
-              <h4 className="mb-2 text-lg font-semibold">
+              <p className="mb-2 text-lg font-semibold">
                 {resource.name} on youtube
-              </h4>
+              </p>
               <iframe
                 width="100%"
                 height="315"

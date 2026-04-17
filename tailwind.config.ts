@@ -1,8 +1,9 @@
 import type { Config } from "tailwindcss";
 import TailwindAnimate from "tailwindcss-animate";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,13 +12,25 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        pixelify: ["var(--font-pixelify)"],
+        outfit: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
       },
       colors: {
+        /* ── Semantic brand palette ── */
+        brand: {
+          DEFAULT: "hsl(var(--brand))",
+          dark: "hsl(var(--brand-dark))",
+          light: "hsl(var(--brand-light))",
+        },
+        /* ── Surface / background tokens ── */
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          card: "hsl(var(--surface-card))",
+          elevated: "hsl(var(--surface-elevated))",
+        },
+        /* ── shadcn/ui design tokens ── */
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        Blue: "#0047AB",
-        Bgblack: "#090909",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -86,6 +99,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [TailwindAnimate],
+  plugins: [
+    TailwindAnimate,
+    /* ── Custom utilities ── */
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".text-glow": {
+          "text-shadow": "0 0 4px rgba(255, 255, 255, 0.3)",
+        },
+      });
+    }),
+  ],
 };
 export default config;

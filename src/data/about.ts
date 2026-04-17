@@ -1,30 +1,30 @@
 export const aboutClub =
-  "Welcome to DEVIATORS, the ultimate tech hub on campus! We're a community of tech enthusiasts, exploring the latest innovations and having a blast while doing it. Whether you're just starting out or already coding at full speed, we're all about collaboration. Ideas flow, debates get heated, and if something goes wrong, we know it's just a feature, not a bug. Join us to explore, learn, and push boundaries, because here, everything is an opportunity for growth!";
+  "We're Deviators — the tech club that builds in public, learns out loud, and ships things that matter. Three years of turning curiosity into code and classmates into collaborators.";
 
 const aboutItems = [
   {
-    title: "Open source",
-    desc: "Step up and dive into open-source! From real projects to major contributions, you'll learn and grow while making an impact that lasts—all with a team just as driven as you.",
+    title: "Open Source",
+    desc: "Real repos, real users, real impact. Contribute to active projects, get your PRs merged, and build a portfolio that speaks for itself.",
   },
   {
     title: "Skill Development",
-    desc: "Just like a butterfly emerging from its chrysalis, our skill development sessions led by senior students help you transform and thrive. From Development, AI, Cloud to intermediate DSA for placement, we've got it all.",
+    desc: "From web dev to cloud infra, our peer-led sessions cover what actually matters. Senior devs teach what textbooks won't.",
   },
   {
     title: "DSA Mastery",
-    desc: "DSA doesn’t have to be daunting! We break down algorithms and data structures into fun, digestible sessions. Perfect for tackling challenges, solving problems, and nailing those tech interviews!",
+    desc: "Algorithms made approachable. Weekly problem-solving sessions designed to sharpen your thinking and ace technical interviews.",
   },
   {
-    title: "Competitions & Tech Awareness",
-    desc: "Gear up for hackathons, stay ahead of trends, and show off your skills in our challenges. We’re all about keeping you on top of the game.",
+    title: "Hackathons & Competitions",
+    desc: "Fast builds, fierce competition, real stakes. We compete at the national level and bring back wins, learnings, and stories.",
   },
   {
     title: "Live Workshops",
-    desc: " We encourage real-time learning with our captivating live workshops. Led by industry experts, these sessions are designed to be interactive, informative, and loads of fun. You'll gain hands-on practical knowledge that will help you excel in your engineering journey",
+    desc: "Hands-on sessions with industry practitioners. No slides, no lectures — just build alongside people who ship for a living.",
   },
   {
-    title: "Community Building",
-    desc: "At the heart of DEVIATORS is our vibrant and supportive community. Connect with fellow engineering peers, share your experiences, and build lasting connections. We believe that “Friends don't let friends code alone”.",
+    title: "Community",
+    desc: "A network of 500+ builders who help each other grow. Debug together, ship together, celebrate together.",
   },
 ];
 

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Clock } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Clock01Icon } from "@hugeicons/core-free-icons";
 
 export const CountdownTimer = ({ expiresOn }: { expiresOn: Date }) => {
   const calculateTimeLeft = (expiresOn: Date) => {
@@ -36,7 +37,7 @@ export const CountdownTimer = ({ expiresOn }: { expiresOn: Date }) => {
 
   return (
     <div className="mb-4 flex items-center gap-2 text-sm text-yellow-400">
-      <Clock size={16} />
+      <HugeiconsIcon icon={Clock01Icon} size={16} />
       <span>
         Expires in: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
         {timeLeft.seconds}s

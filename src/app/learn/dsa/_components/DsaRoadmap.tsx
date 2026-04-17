@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   Accordion,
   AccordionItem,
@@ -6,7 +6,8 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { CardContent } from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 
 import { dsaRoadmapData } from "@/data/resources/dsa";
 
@@ -17,16 +18,16 @@ export default function DsaRoadmap() {
         {dsaRoadmapData.map((category, idx) => (
           <AccordionItem key={idx} value={category.category}>
             <AccordionTrigger>
-              <h2 className="text-lg font-semibold text-white md:text-xl">
+              <p className="text-lg font-semibold text-white md:text-xl">
                 {category.category}
-              </h2>
+              </p>
             </AccordionTrigger>
             <AccordionContent>
               <motion.pre
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
-                className="mb-5 text-wrap text-sm text-gray-400"
+                className="mb-5 text-sm text-wrap text-gray-400"
               >
                 {category.desc}
               </motion.pre>
@@ -41,15 +42,17 @@ export default function DsaRoadmap() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: itemIdx * 0.1 }}
-                      className={`flex items-center space-x-3 rounded-lg bg-[#0047AB]/30 p-3 ${
+                      className={`bg-brand/30 flex items-center space-x-3 rounded-lg p-3 ${
                         item.link ? "underline" : ""
                       }`}
                     >
-                      <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
+                      <HugeiconsIcon
+                        icon={ArrowRight01Icon}
+                        size={20}
+                        className="mt-1 flex-shrink-0 text-white"
+                      />
                       <div>
-                        <h3 className="font-semibold text-white">
-                          {item.title}
-                        </h3>
+                        <p className="font-semibold text-white">{item.title}</p>
                       </div>
                     </Element>
                   );

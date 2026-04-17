@@ -2,8 +2,15 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
-import { ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import type { PanInfo } from "motion/react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowRight01Icon,
+  ArrowLeft01Icon,
+  ArrowLeft02Icon,
+  ArrowRight02Icon,
+} from "@hugeicons/core-free-icons";
 import Link from "next/link";
 
 // Props for the carousel
@@ -11,24 +18,21 @@ interface CarouselProps {
   images: StaticImageData[];
 }
 
-// Animation variants for slide transitions
+// Animation variants — smooth crossfade with subtle zoom
 const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 1000 : -1000,
+  enter: () => ({
     opacity: 0,
-    scale: 0.95,
+    scale: 1.05,
   }),
   center: {
     zIndex: 1,
-    x: 0,
     opacity: 1,
     scale: 1,
   },
-  exit: (direction: number) => ({
+  exit: () => ({
     zIndex: 0,
-    x: direction < 0 ? 1000 : -1000,
     opacity: 0,
-    scale: 0.95,
+    scale: 0.98,
   }),
 };
 
@@ -41,14 +45,12 @@ const swipePower = (offset: number, velocity: number) => {
 // Custom mouse cursor for desktop carousel
 function CustomCursor({ isLeft }: { isLeft: boolean }) {
   return (
-    <div
-      className={`pointer-events-none flex h-16 w-16 items-center justify-center rounded-full bg-Blue opacity-60 shadow-lg`}
-    >
-      {isLeft ? (
-        <ArrowLeft className="h-8 w-8 text-white" />
-      ) : (
-        <ArrowRight className="h-8 w-8 text-white" />
-      )}
+    <div className="glass-card-active pointer-events-none flex h-14 w-14 items-center justify-center rounded-full">
+      <HugeiconsIcon
+        icon={isLeft ? ArrowLeft01Icon : ArrowRight01Icon}
+        size={24}
+        className="text-white/70"
+      />
     </div>
   );
 }
@@ -61,7 +63,6 @@ function TouchableControls({
   slideIndex,
   resetTimeout,
 }: {
-  // eslint-disable-next-line no-unused-vars
   paginate: (newDirection: number) => void;
   images: StaticImageData[];
   setPage: React.Dispatch<React.SetStateAction<[number, number]>>;
@@ -78,9 +79,9 @@ function TouchableControls({
             resetTimeout();
             paginate(-1);
           }}
-          className="rounded-full bg-black/70 p-2 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-black/90 sm:p-3"
+          className="glass-card-active flex h-9 w-9 items-center justify-center rounded-full text-white/60 transition-all hover:text-white sm:h-10 sm:w-10"
         >
-          <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+          <HugeiconsIcon icon={ArrowLeft02Icon} size={20} />
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.1 }}
@@ -89,9 +90,9 @@ function TouchableControls({
             resetTimeout();
             paginate(1);
           }}
-          className="rounded-full bg-black/70 p-2 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-black/90 sm:p-3"
+          className="glass-card-active flex h-9 w-9 items-center justify-center rounded-full text-white/60 transition-all hover:text-white sm:h-10 sm:w-10"
         >
-          <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
+          <HugeiconsIcon icon={ArrowRight02Icon} size={20} />
         </motion.button>
       </div>
       <div className="absolute bottom-2 left-1/2 z-10 flex -translate-x-1/2 transform space-x-1.5 sm:bottom-4 sm:space-x-2">
@@ -104,8 +105,10 @@ function TouchableControls({
               resetTimeout();
               setPage([index, index > slideIndex ? 1 : -1]);
             }}
-            className={`h-2 w-2 rounded-full shadow-lg transition-colors sm:h-3 sm:w-3 ${
-              index === slideIndex ? "bg-white" : "bg-white/50"
+            className={`h-1.5 rounded-full shadow-sm transition-all sm:h-2 ${
+              index === slideIndex
+                ? "bg-brand w-5 sm:w-6"
+                : "w-1.5 bg-white/20 sm:w-2"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -128,7 +131,6 @@ function NonTouchableCarousel({
   images: StaticImageData[];
   page: number;
   direction: number;
-  // eslint-disable-next-line no-unused-vars
   paginate: (newDirection: number) => void;
   slideIndex: number;
   resetTimeout: () => void;
@@ -185,7 +187,7 @@ function NonTouchableCarousel({
     >
       {showCustomMouse && (
         <motion.div
-          className="pointer-events-none absolute left-0 top-0 z-50"
+          className="pointer-events-none absolute top-0 left-0 z-50"
           style={{
             x: cursorPosition.x,
             y: cursorPosition.y,
@@ -204,9 +206,8 @@ function NonTouchableCarousel({
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 250, damping: 30, mass: 0.8 },
-            opacity: { duration: 0.4 },
-            scale: { duration: 0.4 },
+            opacity: { duration: 0.6, ease: "easeInOut" },
+            scale: { duration: 0.6, ease: "easeInOut" },
           }}
           className="absolute h-full w-full overflow-hidden rounded-xl object-cover"
           alt={`Slide ${slideIndex + 1}`}
@@ -292,28 +293,18 @@ export default function ImageCarousel({ images }: CarouselProps) {
   return (
     <div className="w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <div className="mx-auto mb-4 max-w-4xl text-center sm:mb-6">
-        {/* Gallery heading and link */}
-        <h2
-          className="mb-1 font-pixelify text-3xl font-bold text-white sm:mb-2 sm:text-4xl md:text-5xl"
-          style={{
-            textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
-          }}
-        >
+        <h2 className="mb-2 text-3xl text-white sm:text-4xl md:text-5xl">
           View Our Gallery
         </h2>
-        <p className="mb-4 text-sm text-gray-300 sm:text-base md:text-lg">
+        <p className="mb-5 text-sm text-white/40 sm:text-base md:text-lg">
           Explore our curated collection
         </p>
-        <Link
-          href="/gallery"
-          className="group inline-flex items-center gap-2 rounded-full border border-Blue bg-white/0 px-4 py-2 text-sm text-white transition-all duration-300 hover:gap-3 hover:bg-Blue sm:text-base"
-        >
+        <Link href="/gallery" className="btn-primary">
           View Full Gallery
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
 
-      <div className="relative mx-auto mt-4 h-[250px] w-full max-w-4xl overflow-hidden sm:mt-8 sm:h-[350px] md:h-[450px] lg:h-[500px]">
+      <div className="relative mx-auto mt-4 h-[220px] w-full max-w-3xl overflow-hidden rounded-2xl sm:mt-8 sm:h-[300px] md:h-[380px] lg:h-[420px]">
         {!mounted ? (
           // Static fallback for SSR
           <Image
@@ -336,9 +327,8 @@ export default function ImageCarousel({ images }: CarouselProps) {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 250, damping: 30, mass: 0.8 },
-                  opacity: { duration: 0.4 },
-                  scale: { duration: 0.4 },
+                  opacity: { duration: 0.6, ease: "easeInOut" },
+                  scale: { duration: 0.6, ease: "easeInOut" },
                 }}
                 className="absolute h-full w-full object-cover"
                 alt={`Slide ${slideIndex + 1}`}

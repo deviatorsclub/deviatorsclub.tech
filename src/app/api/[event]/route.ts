@@ -2,9 +2,9 @@ import events from "@/data/event";
 
 export async function GET(
   request: Request,
-  { params }: { params: { event: string } },
+  { params }: { params: Promise<{ event: string }> },
 ) {
-  const { event } = params;
+  const { event } = await params;
 
   const eventData = events.find((e) => e.slug === event);
 
