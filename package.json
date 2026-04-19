@@ -15,7 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@bhavyapage/assets": "^0.1.7",
+    "@bhavyapage/assets": "^0.1.10",
     "@hugeicons/core-free-icons": "^4.1.1",
     "@hugeicons/react": "^1.1.6",
     "@radix-ui/react-accordion": "^1.2.12",
