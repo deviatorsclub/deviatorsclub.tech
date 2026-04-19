@@ -1,0 +1,34 @@
+import { EVENT } from "@/types/event";
+import { GitGithub24 } from "./gitGithub24";
+import { DebugDecrypt } from "./debugDecrypt";
+import { CyberSec } from "./cyberSec";
+import { EngineersDay } from "./engineersDay";
+import { OrientationProgram24 } from "./orientationProgram24";
+import { IOSLabSessions } from "./iosLabSession";
+import { DockerSession } from "./dockerSession";
+import { Devolympus } from "./devolympus";
+import { OrientationProgram25 } from "./orientationProgram25";
+import { DebugDecrypt25 } from "./debugDecrypt25";
+import { GitGithub25 } from "./gitGithub25";
+const eventsWithSlug: Omit<EVENT, "slug">[] = [
+  DebugDecrypt,
+  GitGithub24,
+  CyberSec,
+  EngineersDay,
+  OrientationProgram24,
+  IOSLabSessions,
+  DockerSession,
+  Devolympus,
+  OrientationProgram25,
+  DebugDecrypt25,
+  GitGithub25,
+];
+
+const events = eventsWithSlug
+  .map((event) => ({
+    ...event,
+    slug: event.title.toLowerCase().replace(/\s+/g, "-"),
+  }))
+  .sort((a, b) => b.date.getTime() - a.date.getTime());
+
+export default events;

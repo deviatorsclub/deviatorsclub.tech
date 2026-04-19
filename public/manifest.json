@@ -1,0 +1,40 @@
+{
+  "name": "Deviators Club - Code. Create. Deviate.",
+  "short_name": "Deviators Club",
+  "description": "Deviators Club empowers coders and innovators to learn, build, and lead with workshops, hackathons, and collaborative tech projects. Join our passionate community of developers and tech enthusiasts.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000000",
+  "theme_color": "#0047AB",
+  "categories": ["technology", "productivity", "developer-tools"],
+  "lang": "en",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/banner.png",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Deviators Club Community"
+    }
+  ]
+}
