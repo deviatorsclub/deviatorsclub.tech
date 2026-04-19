@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -38,6 +38,14 @@ export const metadata: Metadata = {
   ...metaDataBase,
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+};
+
 // Root layout for the entire app
 export default function RootLayout({
   children,
@@ -51,10 +59,6 @@ export default function RootLayout({
       <head>
         {/* Basic meta tags and icons */}
         <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-        />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/icon.svg" />
         <link rel="apple-touch-icon" href="/icon.svg" />

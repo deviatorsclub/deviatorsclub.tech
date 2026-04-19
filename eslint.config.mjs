@@ -1,4 +1,4 @@
-import nextPlugin from "@next/eslint-plugin-next";
+import nextPlugin from "eslint-config-next";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 
@@ -6,7 +6,6 @@ export default [
   {
     files: ["**/*.{ts,tsx,js,jsx}"],
     plugins: {
-      "@next/next": nextPlugin,
       "@typescript-eslint": tsPlugin,
     },
     languageOptions: {
@@ -18,8 +17,6 @@ export default [
       },
     },
     rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules,
       "prefer-const": "warn",
       "no-var": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
