@@ -5,7 +5,7 @@ import AboutSection from "@/components/HomePage/AboutSection";
 import TeamPreviewSection from "@/components/HomePage/TeamPreview";
 import ImageCarousel from "@/components/HomePage/ImageCarousel";
 import events from "@/data/event";
-import GroupPicture from "@/assets/group_pic.png";
+import GroupPicture from "@/assets/group_pic.webp";
 
 // Enhanced metadata for homepage
 export const metadata: Metadata = {

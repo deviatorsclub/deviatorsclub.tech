@@ -11,6 +11,7 @@ import {
 } from "@/data/structuredData";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import DeviatorsStickers from "@/components/DeviatorsStickers";
 
 // Outfit — body text (variable, 100–900)
 const outfit = Outfit({
@@ -80,6 +81,7 @@ export default function RootLayout({
         {/* Main content */}
         {children}
         <Footer />
+        <DeviatorsStickers />
         {/* Vercel analytics & speed counter (only in production) */}
         {process.env.NODE_ENV === "production" && <Analytics />}
         {process.env.NODE_ENV === "production" && <SpeedInsights />}

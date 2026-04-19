@@ -1,11 +1,11 @@
 import { EVENT } from "@/types/event";
 
-import Image1 from "@/assets/events/engineersDay/1.png";
-import Image3 from "@/assets/events/engineersDay/3.jpeg";
-import Image4 from "@/assets/events/engineersDay/4.jpeg";
-import Image5 from "@/assets/events/engineersDay/5.jpeg";
-import Image6 from "@/assets/events/engineersDay/6.jpeg";
-import Image7 from "@/assets/events/engineersDay/7.jpeg";
+import Image1 from "@/assets/events/engineersDay/1.webp";
+import Image3 from "@/assets/events/engineersDay/3.webp";
+import Image4 from "@/assets/events/engineersDay/4.webp";
+import Image5 from "@/assets/events/engineersDay/5.webp";
+import Image6 from "@/assets/events/engineersDay/6.webp";
+import Image7 from "@/assets/events/engineersDay/7.webp";
 
 export const EngineersDay: Omit<EVENT, "slug"> = {
   title: "Engineers Day",

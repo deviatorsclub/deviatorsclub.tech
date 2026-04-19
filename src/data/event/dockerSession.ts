@@ -1,11 +1,11 @@
 import { EVENT } from "@/types/event";
 
-import Image1 from "@/assets/events/dockerSession/1.png";
-import Image2 from "@/assets/events/dockerSession/2.png";
-import Image3 from "@/assets/events/dockerSession/3.png";
-import Image4 from "@/assets/events/dockerSession/4.png";
-import Image5 from "@/assets/events/dockerSession/5.png";
-import Image6 from "@/assets/events/dockerSession/6.png";
+import Image1 from "@/assets/events/dockerSession/1.webp";
+import Image2 from "@/assets/events/dockerSession/2.webp";
+import Image3 from "@/assets/events/dockerSession/3.webp";
+import Image4 from "@/assets/events/dockerSession/4.webp";
+import Image5 from "@/assets/events/dockerSession/5.webp";
+import Image6 from "@/assets/events/dockerSession/6.webp";
 
 export const DockerSession: Omit<EVENT, "slug"> = {
   title: "Docker Basics Session",

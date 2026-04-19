@@ -1,14 +1,14 @@
 import { EVENT } from "@/types/event";
 
-import Image1 from "@/assets/events/debugDecrypt/1.jpeg";
-import Image2 from "@/assets/events/debugDecrypt/2.jpeg";
-import Image3 from "@/assets/events/debugDecrypt/3.jpeg";
-import Image4 from "@/assets/events/debugDecrypt/4.jpeg";
-import Image5 from "@/assets/events/debugDecrypt/5.jpeg";
-import Image6 from "@/assets/events/debugDecrypt/6.jpeg";
-import Image7 from "@/assets/events/debugDecrypt/7.jpeg";
-import Image8 from "@/assets/events/debugDecrypt/8.png";
-import Image9 from "@/assets/events/debugDecrypt/9.png";
+import Image1 from "@/assets/events/debugDecrypt/1.webp";
+import Image2 from "@/assets/events/debugDecrypt/2.webp";
+import Image3 from "@/assets/events/debugDecrypt/3.webp";
+import Image4 from "@/assets/events/debugDecrypt/4.webp";
+import Image5 from "@/assets/events/debugDecrypt/5.webp";
+import Image6 from "@/assets/events/debugDecrypt/6.webp";
+import Image7 from "@/assets/events/debugDecrypt/7.webp";
+import Image8 from "@/assets/events/debugDecrypt/8.webp";
+import Image9 from "@/assets/events/debugDecrypt/9.webp";
 
 export const DebugDecrypt: Omit<EVENT, "slug"> = {
   title: "Debug Decrypt",

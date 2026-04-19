@@ -1,10 +1,10 @@
 import { EVENT } from "@/types/event";
 
-import Image1 from "@/assets/events/orientationProgram24/1.png";
-import Image2 from "@/assets/events/orientationProgram24/2.png";
-import Image3 from "@/assets/events/orientationProgram24/3.png";
-import Image4 from "@/assets/events/orientationProgram24/4.jpeg";
-import Image5 from "@/assets/events/orientationProgram24/5.png";
+import Image1 from "@/assets/events/orientationProgram24/1.webp";
+import Image2 from "@/assets/events/orientationProgram24/2.webp";
+import Image3 from "@/assets/events/orientationProgram24/3.webp";
+import Image4 from "@/assets/events/orientationProgram24/4.webp";
+import Image5 from "@/assets/events/orientationProgram24/5.webp";
 
 export const OrientationProgram24: Omit<EVENT, "slug"> = {
   title: "Orientation Program 2024",

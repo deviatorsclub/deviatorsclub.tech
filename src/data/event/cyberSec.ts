@@ -1,10 +1,10 @@
 import { EVENT } from "@/types/event";
 
-import Image1 from "@/assets/events/cyberSec/1.png";
-import Image2 from "@/assets/events/cyberSec/2.jpeg";
-import Image3 from "@/assets/events/cyberSec/3.jpeg";
-import Image4 from "@/assets/events/cyberSec/4.jpeg";
-import Image5 from "@/assets/events/cyberSec/5.png";
+import Image1 from "@/assets/events/cyberSec/1.webp";
+import Image2 from "@/assets/events/cyberSec/2.webp";
+import Image3 from "@/assets/events/cyberSec/3.webp";
+import Image4 from "@/assets/events/cyberSec/4.webp";
+import Image5 from "@/assets/events/cyberSec/5.webp";
 
 export const CyberSec: Omit<EVENT, "slug"> = {
   title: "Cyber Security Session",

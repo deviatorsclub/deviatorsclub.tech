@@ -1,10 +1,10 @@
 import { EVENT } from "@/types/event";
 
-import Image4 from "@/assets/events/iosLabSessions/4.jpeg";
-import Image5 from "@/assets/events/iosLabSessions/5.jpeg";
-import Image6 from "@/assets/events/iosLabSessions/6.jpeg";
-import Image7 from "@/assets/events/iosLabSessions/7.jpeg";
-import Image8 from "@/assets/events/iosLabSessions/8.jpeg";
+import Image4 from "@/assets/events/iosLabSessions/4.webp";
+import Image5 from "@/assets/events/iosLabSessions/5.webp";
+import Image6 from "@/assets/events/iosLabSessions/6.webp";
+import Image7 from "@/assets/events/iosLabSessions/7.webp";
+import Image8 from "@/assets/events/iosLabSessions/8.webp";
 
 export const IOSLabSessions: Omit<EVENT, "slug"> = {
   title: "IOS Lab Session",

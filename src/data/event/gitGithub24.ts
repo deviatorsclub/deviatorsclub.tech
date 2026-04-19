@@ -1,13 +1,13 @@
 import { EVENT } from "@/types/event";
 
-import Image1 from "@/assets/events/gitGithub24/1.png";
-import Image2 from "@/assets/events/gitGithub24/2.png";
-import Image3 from "@/assets/events/gitGithub24/3.png";
-import Image4 from "@/assets/events/gitGithub24/4.png";
-import Image5 from "@/assets/events/gitGithub24/5.png";
-import Image6 from "@/assets/events/gitGithub24/6.png";
-import Image7 from "@/assets/events/gitGithub24/7.png";
-import Image8 from "@/assets/events/gitGithub24/8.png";
+import Image1 from "@/assets/events/gitGithub24/1.webp";
+import Image2 from "@/assets/events/gitGithub24/2.webp";
+import Image3 from "@/assets/events/gitGithub24/3.webp";
+import Image4 from "@/assets/events/gitGithub24/4.webp";
+import Image5 from "@/assets/events/gitGithub24/5.webp";
+import Image6 from "@/assets/events/gitGithub24/6.webp";
+import Image7 from "@/assets/events/gitGithub24/7.webp";
+import Image8 from "@/assets/events/gitGithub24/8.webp";
 
 export const GitGithub24: Omit<EVENT, "slug"> = {
   title: "Git & Github Session 2024",
